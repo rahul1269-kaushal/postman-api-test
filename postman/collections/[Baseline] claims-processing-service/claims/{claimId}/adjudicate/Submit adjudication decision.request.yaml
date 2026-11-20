@@ -14,8 +14,8 @@ body:
   type: json
   content: |-
     {
-      "decision": "partial_approval",
-      "approvedAmount": 251.068164071907,
+      "decision": "approved",
+      "approvedAmount": 7482.493191726475,
       "adjusterNotes": "string",
       "denialReason": "string",
       "isAutomated": false
@@ -30,8 +30,8 @@ examples:
           {
             "claimId": "string",
             "decision": "string",
-            "approvedAmount": 1285.5661670447805,
-            "adjudicatedAt": "1969-10-01T01:59:19.773Z",
+            "approvedAmount": 8790.7002230359,
+            "adjudicatedAt": "1947-01-14T03:27:43.597Z",
             "adjusterNotes": "string"
           }
       headers:
