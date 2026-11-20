@@ -39,7 +39,7 @@ examples:
               "applicationId": "string",
               "documentType": "string",
               "fileName": "string",
-              "uploadedAt": "2013-01-13T06:47:44.715Z",
+              "uploadedAt": "2024-10-27T14:16:26.019Z",
               "verificationStatus": "rejected"
             },
             {
@@ -47,8 +47,8 @@ examples:
               "applicationId": "string",
               "documentType": "string",
               "fileName": "string",
-              "uploadedAt": "1957-05-15T06:24:22.732Z",
-              "verificationStatus": "verified"
+              "uploadedAt": "1967-01-31T11:49:51.769Z",
+              "verificationStatus": "rejected"
             }
           ]
       headers:

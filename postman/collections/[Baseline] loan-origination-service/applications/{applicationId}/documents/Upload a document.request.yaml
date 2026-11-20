@@ -16,7 +16,7 @@ body:
     - key: file
       type: file
     - key: documentType
-      value: identity
+      value: tax_return
       type: text
 examples:
   - response:
@@ -30,8 +30,8 @@ examples:
             "applicationId": "string",
             "documentType": "string",
             "fileName": "string",
-            "uploadedAt": "1973-05-21T00:11:21.871Z",
-            "verificationStatus": "pending"
+            "uploadedAt": "2000-04-25T21:37:21.625Z",
+            "verificationStatus": "rejected"
           }
       headers:
         - key: Content-Type

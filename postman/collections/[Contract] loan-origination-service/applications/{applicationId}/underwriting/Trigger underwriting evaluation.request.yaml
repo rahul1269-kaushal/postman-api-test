@@ -191,9 +191,9 @@ examples:
           {
             "applicationId": "string",
             "status": "completed",
-            "decision": "referred_to_manual",
-            "riskScore": 65,
-            "evaluatedAt": "2010-05-03T15:51:56.800Z"
+            "decision": "denied",
+            "riskScore": 92,
+            "evaluatedAt": "1948-01-08T08:22:29.323Z"
           }
       headers:
         - key: Content-Type

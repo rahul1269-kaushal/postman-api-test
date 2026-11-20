@@ -1,14 +1,13 @@
 workspace:
-  id: 4ee8ee00-e557-4fc6-bf7f-6b5a234c1cf2
+  id: 600bce47-2a5a-48e9-8502-b459db398220
 localResources:
   collections:
-    - ../postman/collections/[Baseline] payment-refund-service
-    - ../postman/collections/[Smoke] payment-refund-service
-    - ../postman/collections/[Contract] payment-refund-service
+    - ../postman/collections/[Baseline] loan-origination-service
+    - ../postman/collections/[Smoke] loan-origination-service
+    - ../postman/collections/[Contract] loan-origination-service
   environments:
     - ../postman/environments/prod.postman_environment.json
-    - ../postman/environments/uat.postman_environment.json
-    - ../postman/environments/qa.postman_environment.json
+    - ../postman/environments/staging.postman_environment.json
     - ../postman/environments/dev.postman_environment.json
   specs:
     - ../spec/claims-processing-api-openapi.yaml
@@ -16,11 +15,10 @@ localResources:
     - ../spec/payment-refund-api-openapi.yaml
 cloudResources:
   collections:
-    ../postman/collections/[Baseline] payment-refund-service: 28062698-6621d984-5736-44e7-892a-5b5fca58c0d7
-    ../postman/collections/[Smoke] payment-refund-service: 28062698-175b0fdc-9305-44ab-b257-9a7f15a9d399
-    ../postman/collections/[Contract] payment-refund-service: 28062698-29e3c38f-bacd-4fa8-902c-6ca818324eed
+    ../postman/collections/[Baseline] loan-origination-service: 28062698-e8aabc37-81b1-4bfe-bed6-46407a439dc8
+    ../postman/collections/[Smoke] loan-origination-service: 28062698-739d5853-d50b-43d9-ad61-f5cd9c54b9df
+    ../postman/collections/[Contract] loan-origination-service: 28062698-a606b71a-bc24-4c63-8eab-420814398ea3
   environments:
-    ../postman/environments/prod.postman_environment.json: 28062698-28277045-5760-4d8a-8fdb-17f69de9e663
-    ../postman/environments/uat.postman_environment.json: 28062698-cc5b09b0-deb6-4bbe-90a7-63ab477cd71a
-    ../postman/environments/qa.postman_environment.json: 28062698-abc602cb-942a-4e58-8365-3f22b72ee4ee
-    ../postman/environments/dev.postman_environment.json: 28062698-96018bf0-d3e3-4e55-8162-54a29bdd077e
+    ../postman/environments/prod.postman_environment.json: 28062698-0d22c4eb-d28b-488d-8c1f-05f8354f6a77
+    ../postman/environments/staging.postman_environment.json: 28062698-297dfb58-c3d7-48bc-b191-4a17f1d63138
+    ../postman/environments/dev.postman_environment.json: 28062698-3542a032-0b3f-4a31-9233-1e54eac4e332

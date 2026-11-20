@@ -30,17 +30,17 @@ examples:
             "id": "string",
             "applicantId": "string",
             "productType": "string",
-            "requestedAmount": 7060.414856535245,
-            "termMonths": 4460,
-            "status": "under_review",
-            "createdAt": "1985-11-15T11:10:01.100Z",
-            "updatedAt": "2022-03-21T01:28:11.814Z",
+            "requestedAmount": 1335.7507892408994,
+            "termMonths": 8421,
+            "status": "submitted",
+            "createdAt": "2023-10-26T16:39:29.331Z",
+            "updatedAt": "2001-04-15T17:49:08.138Z",
             "underwritingResult": {
               "applicationId": "string",
-              "status": "pending",
-              "decision": "referred_to_manual",
-              "riskScore": 41,
-              "evaluatedAt": "1987-11-09T13:46:10.924Z"
+              "status": "failed",
+              "decision": "denied",
+              "riskScore": 66,
+              "evaluatedAt": "1985-10-13T23:12:11.155Z"
             }
           }
       headers:

@@ -16,7 +16,7 @@ body:
     - key: file
       type: file
     - key: documentType
-      value: income_verification
+      value: tax_return
       type: text
 scripts:
   - type: afterResponse
@@ -48,7 +48,7 @@ examples:
             "applicationId": "string",
             "documentType": "string",
             "fileName": "string",
-            "uploadedAt": "1954-04-30T15:17:56.891Z",
+            "uploadedAt": "2011-02-14T06:28:37.555Z",
             "verificationStatus": "verified"
           }
       headers:

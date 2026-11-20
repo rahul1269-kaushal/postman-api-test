@@ -21,7 +21,7 @@ examples:
               "applicationId": "string",
               "documentType": "string",
               "fileName": "string",
-              "uploadedAt": "1978-10-21T10:52:21.449Z",
+              "uploadedAt": "1997-02-28T00:08:01.905Z",
               "verificationStatus": "pending"
             },
             {
@@ -29,8 +29,8 @@ examples:
               "applicationId": "string",
               "documentType": "string",
               "fileName": "string",
-              "uploadedAt": "2024-02-04T21:05:08.775Z",
-              "verificationStatus": "pending"
+              "uploadedAt": "2001-06-04T05:33:25.588Z",
+              "verificationStatus": "rejected"
             }
           ]
       headers:
