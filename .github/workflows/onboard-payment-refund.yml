@@ -1,0 +1,34 @@
+name: Onboard Payment Refund API
+
+on:
+  workflow_dispatch:
+
+jobs:
+  onboard:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Onboard Payment Refund Service into Postman
+        uses: postman-cs/postman-api-onboarding-action@v0
+        with:
+          project-name: payment-refund-service
+          spec-url: https://raw.githubusercontent.com/${{ github.repository }}/main/spec/payment-refund-api-openapi.yaml
+          spec-path: spec/payment-refund-api-openapi.yaml
+          domain: payments
+          environments-json: '["prod","uat","qa","dev"]'
+          env-runtime-urls-json: >-
+            {
+              "prod": "https://api.payments.example.com/v2",
+              "uat":  "https://api-uat.payments.example.com/v2",
+              "qa":   "https://api-qa.payments.example.com/v2",
+              "dev":  "https://api-dev.payments.example.com/v2"
+            }
+          postman-api-key: ${{ secrets.POSTMAN_API_KEY }}
+          postman-access-token: ${{ secrets.POSTMAN_ACCESS_TOKEN }}
+          github-token: ${{ github.token }}

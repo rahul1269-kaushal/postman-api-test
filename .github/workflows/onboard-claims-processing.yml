@@ -1,0 +1,37 @@
+name: Onboard Claims Processing API
+
+on:
+  workflow_dispatch:
+
+jobs:
+  onboard:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Onboard Claims Processing Service into Postman
+        uses: postman-cs/postman-api-onboarding-action@v0
+        with:
+          project-name: claims-processing-service
+          spec-url: https://raw.githubusercontent.com/${{ github.repository }}/main/spec/claims-processing-api-openapi.yaml
+          spec-path: spec/claims-processing-api-openapi.yaml
+          domain: insurance
+          environments-json: '["prod","staging","dev"]'
+          env-runtime-urls-json: >-
+            {
+              "prod":    "https://claims-api.example.com/v3",
+              "staging": "https://claims-api-staging.example.com/v3",
+              "dev":     "https://claims-api-dev.example.com/v3"
+            }
+          # Note: This service deploys via GitLab CI, not GitHub Actions.
+          # This workflow onboards the spec and generates Postman assets from GitHub.
+          # Integrating the generated collections into their GitLab pipelines is a
+          # separate platform-team coordination step covered in the adaptation analysis.
+          postman-api-key: ${{ secrets.POSTMAN_API_KEY }}
+          postman-access-token: ${{ secrets.POSTMAN_ACCESS_TOKEN }}
+          github-token: ${{ github.token }}
