@@ -22,12 +22,6 @@ jobs:
           spec-path: spec/claims-processing-api-openapi.yaml
           domain: insurance
           environments-json: '["prod","staging","dev"]'
-          env-runtime-urls-json: >-
-            {
-              "prod":    "https://claims-api.example.com/v3",
-              "staging": "https://claims-api-staging.example.com/v3",
-              "dev":     "https://claims-api-dev.example.com/v3"
-            }
           # Note: This service deploys via GitLab CI, not GitHub Actions.
           # This workflow onboards the spec and generates Postman assets from GitHub.
           # Integrating the generated collections into their GitLab pipelines is a
