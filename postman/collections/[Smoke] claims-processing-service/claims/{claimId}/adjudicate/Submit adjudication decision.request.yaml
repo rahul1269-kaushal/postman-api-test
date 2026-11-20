@@ -15,7 +15,7 @@ body:
   content: |-
     {
       "decision": "approved",
-      "approvedAmount": 6988.651338290204,
+      "approvedAmount": 5381.664596504989,
       "adjusterNotes": "string",
       "denialReason": "string",
       "isAutomated": false
@@ -48,8 +48,8 @@ examples:
           {
             "claimId": "string",
             "decision": "string",
-            "approvedAmount": 588.9784593544778,
-            "adjudicatedAt": "2025-05-06T11:12:44.244Z",
+            "approvedAmount": 9061.337570696429,
+            "adjudicatedAt": "1995-07-28T03:10:06.870Z",
             "adjusterNotes": "string"
           }
       headers:

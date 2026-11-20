@@ -14,8 +14,8 @@ body:
   type: json
   content: |-
     {
-      "paymentMethod": "wire",
-      "amount": 3226.903806913264,
+      "paymentMethod": "check",
+      "amount": 1478.6340043151936,
       "payeeName": "string",
       "payeeAccountId": "string"
     }
@@ -178,37 +178,3 @@ scripts:
       - '  if (!validate(value)) pm.expect.fail("OpenAPI schema validation failed for " + contract.method + " " + contract.path + " status " + pm.response.code + ": " + JSON.stringify(validate.errors || []));'
       - '});'
     language: text/javascript
-examples:
-  - response:
-      statusCode: 201
-      statusText: Created
-      body:
-        type: json
-        content: |-
-          {
-            "claimId": "string",
-            "amount": 9970.56455157754,
-            "paymentMethod": "string",
-            "status": "initiated",
-            "initiatedAt": "1963-05-20T07:40:07.969Z",
-            "completedAt": "2001-10-21T02:26:49.134Z",
-            "referenceNumber": "string"
-          }
-      headers:
-        - key: Content-Type
-          value: application/json
-    name: Settlement initiated
-  - response:
-      statusCode: 400
-      statusText: Bad Request
-      body:
-        type: text
-        content: ''
-    name: Claim not eligible for settlement
-  - response:
-      statusCode: 404
-      statusText: Not Found
-      body:
-        type: text
-        content: ''
-    name: Claim not found

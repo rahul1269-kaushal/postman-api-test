@@ -22,7 +22,7 @@ description: |-
   Contact Support:
    Name: Insurance Engineering Team
    Email: insurance-engineering@example.com
-id: 2087c0b2-dae9-4db2-89da-bb8c68baad06
+id: 8b5850bf-2829-49c1-b40e-3ce2cb5063d7
 auth:
   type: apikey
   credentials:
@@ -38,13 +38,10 @@ auth:
 variables:
   - key: baseUrl
     value: https://claims-api.example.com/v3
-    type: any
   - key: baseUrl1
     value: https://claims-api-staging.example.com/v3
-    type: any
   - key: baseUrl2
     value: https://claims-api-dev.example.com/v3
-    type: any
 items:
   - ref: ./claims/folder.yaml
   - ref: ./health/folder.yaml

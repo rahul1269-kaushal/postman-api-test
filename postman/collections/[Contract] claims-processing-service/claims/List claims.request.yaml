@@ -1,19 +1,19 @@
 type: http
 name: List claims
-url: '{{baseUrl}}/claims?status=under_investigation&lineOfBusiness=liability&filedAfter=1977-03-10&filedBefore=1977-03-10&limit=25&offset=0'
+url: '{{baseUrl}}/claims?status=filed&lineOfBusiness=workers_comp&filedAfter=2020-06-20&filedBefore=2020-06-20&limit=25&offset=0'
 method: GET
 headers:
   - key: Accept
     value: application/json
 queryParams:
   - key: status
-    value: under_investigation
+    value: filed
   - key: lineOfBusiness
-    value: liability
+    value: workers_comp
   - key: filedAfter
-    value: '1977-03-10'
+    value: '2020-06-20'
   - key: filedBefore
-    value: '1977-03-10'
+    value: '2020-06-20'
   - key: limit
     value: '25'
   - key: offset
@@ -346,77 +346,3 @@ scripts:
       - '  if (!validate(value)) pm.expect.fail("OpenAPI schema validation failed for " + contract.method + " " + contract.path + " status " + pm.response.code + ": " + JSON.stringify(validate.errors || []));'
       - '});'
     language: text/javascript
-examples:
-  - response:
-      statusCode: 200
-      statusText: OK
-      body:
-        type: json
-        content: |-
-          {
-            "data": [
-              {
-                "id": "string",
-                "policyId": "string",
-                "lineOfBusiness": "string",
-                "status": "denied",
-                "incidentDate": "2004-04-03",
-                "description": "string",
-                "estimatedDamage": 5223.091763434684,
-                "filedAt": "1950-07-29T10:03:38.483Z",
-                "updatedAt": "2019-01-14T21:33:57.905Z",
-                "assignedAdjuster": "string",
-                "adjudication": {
-                  "claimId": "string",
-                  "decision": "string",
-                  "approvedAmount": 2699.1610223117023,
-                  "adjudicatedAt": "1990-05-09T17:09:47.638Z",
-                  "adjusterNotes": "string"
-                },
-                "settlement": {
-                  "claimId": "string",
-                  "amount": 3773.4725421958083,
-                  "paymentMethod": "string",
-                  "status": "processing",
-                  "initiatedAt": "1981-06-22T09:52:10.331Z",
-                  "completedAt": "2025-09-19T18:07:27.937Z",
-                  "referenceNumber": "string"
-                }
-              },
-              {
-                "id": "string",
-                "policyId": "string",
-                "lineOfBusiness": "string",
-                "status": "denied",
-                "incidentDate": "1975-04-11",
-                "description": "string",
-                "estimatedDamage": 1642.341120087435,
-                "filedAt": "2012-01-16T17:17:38.968Z",
-                "updatedAt": "1972-12-10T21:08:40.803Z",
-                "assignedAdjuster": "string",
-                "adjudication": {
-                  "claimId": "string",
-                  "decision": "string",
-                  "approvedAmount": 8531.68305322436,
-                  "adjudicatedAt": "2020-05-27T14:23:58.575Z",
-                  "adjusterNotes": "string"
-                },
-                "settlement": {
-                  "claimId": "string",
-                  "amount": 4168.950538422486,
-                  "paymentMethod": "string",
-                  "status": "failed",
-                  "initiatedAt": "1960-04-05T07:46:39.424Z",
-                  "completedAt": "1954-06-14T06:32:39.375Z",
-                  "referenceNumber": "string"
-                }
-              }
-            ],
-            "total": 6426,
-            "limit": 2382,
-            "offset": 8234
-          }
-      headers:
-        - key: Content-Type
-          value: application/json
-    name: List of claims

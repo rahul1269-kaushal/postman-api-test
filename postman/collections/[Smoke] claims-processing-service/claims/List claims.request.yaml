@@ -1,19 +1,19 @@
 type: http
 name: List claims
-url: '{{baseUrl}}/claims?status=denied&lineOfBusiness=liability&filedAfter=2021-03-14&filedBefore=2021-03-14&limit=25&offset=0'
+url: '{{baseUrl}}/claims?status=under_investigation&lineOfBusiness=property&filedAfter=2025-11-06&filedBefore=2025-11-06&limit=25&offset=0'
 method: GET
 headers:
   - key: Accept
     value: application/json
 queryParams:
   - key: status
-    value: denied
+    value: under_investigation
   - key: lineOfBusiness
-    value: liability
+    value: property
   - key: filedAfter
-    value: '2021-03-14'
+    value: '2025-11-06'
   - key: filedBefore
-    value: '2021-03-14'
+    value: '2025-11-06'
   - key: limit
     value: '25'
   - key: offset
@@ -49,27 +49,27 @@ examples:
                 "id": "string",
                 "policyId": "string",
                 "lineOfBusiness": "string",
-                "status": "triaged",
-                "incidentDate": "2005-11-08",
+                "status": "filed",
+                "incidentDate": "2005-12-22",
                 "description": "string",
-                "estimatedDamage": 1083.3568021559126,
-                "filedAt": "1977-08-19T17:44:25.112Z",
-                "updatedAt": "1993-08-06T08:10:30.369Z",
+                "estimatedDamage": 9548.476046032014,
+                "filedAt": "2014-07-20T15:28:55.502Z",
+                "updatedAt": "1961-04-08T05:41:28.639Z",
                 "assignedAdjuster": "string",
                 "adjudication": {
                   "claimId": "string",
                   "decision": "string",
-                  "approvedAmount": 1760.69800320946,
-                  "adjudicatedAt": "2002-08-24T05:12:04.018Z",
+                  "approvedAmount": 3906.477936194518,
+                  "adjudicatedAt": "1964-12-29T02:54:12.449Z",
                   "adjusterNotes": "string"
                 },
                 "settlement": {
                   "claimId": "string",
-                  "amount": 7198.648701648015,
+                  "amount": 1748.2715738582965,
                   "paymentMethod": "string",
-                  "status": "completed",
-                  "initiatedAt": "2023-10-23T19:46:26.951Z",
-                  "completedAt": "1994-08-12T08:54:40.041Z",
+                  "status": "failed",
+                  "initiatedAt": "1951-06-16T16:44:59.338Z",
+                  "completedAt": "1960-10-18T13:10:43.230Z",
                   "referenceNumber": "string"
                 }
               },
@@ -77,34 +77,34 @@ examples:
                 "id": "string",
                 "policyId": "string",
                 "lineOfBusiness": "string",
-                "status": "filed",
-                "incidentDate": "1963-03-11",
+                "status": "triaged",
+                "incidentDate": "1964-07-14",
                 "description": "string",
-                "estimatedDamage": 185.87683011265233,
-                "filedAt": "2020-01-22T03:16:00.564Z",
-                "updatedAt": "1946-11-23T11:22:04.305Z",
+                "estimatedDamage": 9714.415173072133,
+                "filedAt": "1984-10-16T17:28:33.769Z",
+                "updatedAt": "1962-05-20T18:50:09.941Z",
                 "assignedAdjuster": "string",
                 "adjudication": {
                   "claimId": "string",
                   "decision": "string",
-                  "approvedAmount": 6119.9898703132185,
-                  "adjudicatedAt": "1998-11-23T06:15:51.706Z",
+                  "approvedAmount": 4694.0709696520735,
+                  "adjudicatedAt": "1991-05-10T03:08:40.286Z",
                   "adjusterNotes": "string"
                 },
                 "settlement": {
                   "claimId": "string",
-                  "amount": 5010.209673776852,
+                  "amount": 10.380562101802715,
                   "paymentMethod": "string",
-                  "status": "completed",
-                  "initiatedAt": "1956-09-24T06:44:36.586Z",
-                  "completedAt": "2017-02-08T12:25:01.045Z",
+                  "status": "processing",
+                  "initiatedAt": "2021-02-23T02:16:01.689Z",
+                  "completedAt": "1970-09-12T01:56:07.193Z",
                   "referenceNumber": "string"
                 }
               }
             ],
-            "total": 5131,
-            "limit": 4875,
-            "offset": 9260
+            "total": 9221,
+            "limit": 4660,
+            "offset": 7224
           }
       headers:
         - key: Content-Type

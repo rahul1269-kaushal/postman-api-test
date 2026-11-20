@@ -35,11 +35,11 @@ examples:
         content: |-
           {
             "claimId": "string",
-            "amount": 4016.0261194602363,
+            "amount": 1955.3244770304966,
             "paymentMethod": "string",
-            "status": "failed",
-            "initiatedAt": "2025-12-07T11:05:29.972Z",
-            "completedAt": "1993-07-04T19:22:46.100Z",
+            "status": "completed",
+            "initiatedAt": "1999-03-26T01:57:52.730Z",
+            "completedAt": "1950-12-06T19:55:46.010Z",
             "referenceNumber": "string"
           }
       headers:

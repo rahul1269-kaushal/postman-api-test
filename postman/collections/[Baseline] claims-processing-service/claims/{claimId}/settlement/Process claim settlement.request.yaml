@@ -14,42 +14,8 @@ body:
   type: json
   content: |-
     {
-      "paymentMethod": "ach",
-      "amount": 3297.7751385043075,
+      "paymentMethod": "wire",
+      "amount": 2006.8731812578467,
       "payeeName": "string",
       "payeeAccountId": "string"
     }
-examples:
-  - response:
-      statusCode: 201
-      statusText: Created
-      body:
-        type: json
-        content: |-
-          {
-            "claimId": "string",
-            "amount": 8516.271226523195,
-            "paymentMethod": "string",
-            "status": "initiated",
-            "initiatedAt": "2026-02-03T17:05:08.657Z",
-            "completedAt": "2023-05-09T07:31:55.626Z",
-            "referenceNumber": "string"
-          }
-      headers:
-        - key: Content-Type
-          value: application/json
-    name: Settlement initiated
-  - response:
-      statusCode: 400
-      statusText: Bad Request
-      body:
-        type: text
-        content: ''
-    name: Claim not eligible for settlement
-  - response:
-      statusCode: 404
-      statusText: Not Found
-      body:
-        type: text
-        content: ''
-    name: Claim not found
