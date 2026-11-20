@@ -2,6 +2,11 @@ name: Onboard Claims Processing API
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'spec/claims-processing-api-openapi.yaml'
 
 jobs:
   onboard:
@@ -20,8 +25,11 @@ jobs:
           project-name: claims-processing-service
           spec-url: https://raw.githubusercontent.com/${{ github.repository }}/main/spec/claims-processing-api-openapi.yaml
           working-directory: .postman-state/claims-processing
+          artifact-dir: postman/claims-processing
           domain: insurance
           environments-json: '["prod","staging","dev"]'
+          breaking-change-mode: pr-native
+          monitor-cron: '0 9 * * 1-5'
           # Note: This service deploys via GitLab CI, not GitHub Actions.
           # This workflow onboards the spec and generates Postman assets from GitHub.
           # Integrating the generated collections into their GitLab pipelines is a

@@ -2,6 +2,11 @@ name: Onboard Loan Origination API
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'spec/loan-origination-api-openapi.yaml'
 
 jobs:
   onboard:
@@ -20,6 +25,7 @@ jobs:
           project-name: loan-origination-service
           spec-url: https://raw.githubusercontent.com/${{ github.repository }}/main/spec/loan-origination-api-openapi.yaml
           working-directory: .postman-state/loan-origination
+          artifact-dir: postman/loan-origination
           domain: lending
           environments-json: '["prod","staging","dev"]'
           env-runtime-urls-json: >-
@@ -28,6 +34,8 @@ jobs:
               "staging": "https://lending-api-staging.example.com/v1",
               "dev":     "https://lending-api-dev.example.com/v1"
             }
+          breaking-change-mode: pr-native
+          monitor-cron: '0 9 * * 1-5'
           # mTLS credentials required for loan origination (mTLS service-to-service auth).
           # Add LOAN_SSL_CLIENT_CERT and LOAN_SSL_CLIENT_KEY as base64-encoded PEM secrets.
           # Leave blank and the action skips mTLS setup without failing the run.

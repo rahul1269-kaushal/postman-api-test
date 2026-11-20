@@ -2,6 +2,11 @@ name: Onboard Payment Refund API
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'spec/payment-refund-api-openapi.yaml'
 
 jobs:
   onboard:
@@ -20,6 +25,7 @@ jobs:
           project-name: payment-refund-service
           spec-url: https://raw.githubusercontent.com/${{ github.repository }}/main/spec/payment-refund-api-openapi.yaml
           working-directory: .postman-state/payment-refund
+          artifact-dir: postman/payment-refund
           domain: payments
           environments-json: '["prod","uat","qa","dev"]'
           env-runtime-urls-json: >-
@@ -29,6 +35,8 @@ jobs:
               "qa":   "https://api-qa.payments.example.com/v2",
               "dev":  "https://api-dev.payments.example.com/v2"
             }
+          breaking-change-mode: pr-native
+          monitor-cron: '0 9 * * 1-5'
           generate-ci-workflow: false
           postman-api-key: ${{ secrets.POSTMAN_API_KEY }}
           postman-access-token: ${{ secrets.POSTMAN_ACCESS_TOKEN }}
