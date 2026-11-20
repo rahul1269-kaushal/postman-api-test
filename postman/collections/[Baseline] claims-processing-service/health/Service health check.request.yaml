@@ -13,7 +13,7 @@ examples:
         type: json
         content: |-
           {
-            "status": "degraded",
+            "status": "unhealthy",
             "version": "string",
             "uptime": "string"
           }

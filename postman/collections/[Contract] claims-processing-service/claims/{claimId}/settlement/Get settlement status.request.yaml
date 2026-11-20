@@ -175,11 +175,11 @@ examples:
         content: |-
           {
             "claimId": "string",
-            "amount": 8226.39712937807,
+            "amount": 9637.76269173061,
             "paymentMethod": "string",
-            "status": "processing",
-            "initiatedAt": "1990-07-13T12:23:15.428Z",
-            "completedAt": "2018-02-02T03:48:50.737Z",
+            "status": "completed",
+            "initiatedAt": "1998-07-09T20:33:09.923Z",
+            "completedAt": "2018-06-12T15:20:56.209Z",
             "referenceNumber": "string"
           }
       headers:

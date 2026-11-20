@@ -14,8 +14,8 @@ body:
   type: json
   content: |-
     {
-      "paymentMethod": "check",
-      "amount": 1558.4896805021208,
+      "paymentMethod": "wire",
+      "amount": 3493.1515591081375,
       "payeeName": "string",
       "payeeAccountId": "string"
     }
@@ -46,11 +46,11 @@ examples:
         content: |-
           {
             "claimId": "string",
-            "amount": 6428.555968026717,
+            "amount": 9089.03269003503,
             "paymentMethod": "string",
             "status": "failed",
-            "initiatedAt": "1951-12-20T03:26:28.277Z",
-            "completedAt": "1951-07-18T11:12:35.087Z",
+            "initiatedAt": "1980-10-12T09:50:14.686Z",
+            "completedAt": "2015-07-25T09:52:46.126Z",
             "referenceNumber": "string"
           }
       headers:
