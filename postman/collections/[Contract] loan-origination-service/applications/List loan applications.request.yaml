@@ -1,16 +1,16 @@
 type: http
 name: List loan applications
-url: '{{baseUrl}}/applications?status=under_review&productType=personal_loan&limit=25&offset=0'
+url: '{{baseUrl}}/applications?status=approved&productType=auto_loan&limit=25&offset=0'
 method: GET
 headers:
   - key: Accept
     value: application/json
 queryParams:
   - key: status
-    value: under_review
+    value: approved
     description: Filter by application status
   - key: productType
-    value: personal_loan
+    value: auto_loan
     description: Filter by loan product type
   - key: limit
     value: '25'
@@ -304,40 +304,40 @@ examples:
                 "id": "string",
                 "applicantId": "string",
                 "productType": "string",
-                "requestedAmount": 7713.308203398887,
-                "termMonths": 7646,
+                "requestedAmount": 3165.6762344120802,
+                "termMonths": 3849,
                 "status": "submitted",
-                "createdAt": "1965-06-26T01:28:09.937Z",
-                "updatedAt": "1968-01-31T01:55:33.664Z",
+                "createdAt": "2021-03-28T01:40:30.102Z",
+                "updatedAt": "2010-03-08T03:50:56.228Z",
                 "underwritingResult": {
                   "applicationId": "string",
-                  "status": "in_progress",
-                  "decision": "denied",
-                  "riskScore": 92,
-                  "evaluatedAt": "2019-07-23T11:06:57.055Z"
+                  "status": "pending",
+                  "decision": "approved",
+                  "riskScore": 44,
+                  "evaluatedAt": "1970-07-27T16:38:13.171Z"
                 }
               },
               {
                 "id": "string",
                 "applicantId": "string",
                 "productType": "string",
-                "requestedAmount": 7417.056534280862,
-                "termMonths": 6094,
+                "requestedAmount": 2295.1616152653155,
+                "termMonths": 5185,
                 "status": "withdrawn",
-                "createdAt": "1957-06-09T00:32:18.204Z",
-                "updatedAt": "1984-04-15T23:48:08.035Z",
+                "createdAt": "2013-01-02T11:34:49.399Z",
+                "updatedAt": "2014-11-10T19:57:30.666Z",
                 "underwritingResult": {
                   "applicationId": "string",
-                  "status": "in_progress",
-                  "decision": "referred_to_manual",
-                  "riskScore": 53,
-                  "evaluatedAt": "2015-07-18T07:13:40.937Z"
+                  "status": "completed",
+                  "decision": "approved",
+                  "riskScore": 48,
+                  "evaluatedAt": "1967-05-20T16:32:38.156Z"
                 }
               }
             ],
-            "total": 8487,
-            "limit": 9164,
-            "offset": 7178
+            "total": 2568,
+            "limit": 1664,
+            "offset": 1910
           }
       headers:
         - key: Content-Type

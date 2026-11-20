@@ -1,13 +1,13 @@
 type: http
 name: List loan applications
-url: '{{baseUrl}}/applications?status=under_review&productType=auto_loan&limit=25&offset=0'
+url: '{{baseUrl}}/applications?status=withdrawn&productType=auto_loan&limit=25&offset=0'
 method: GET
 headers:
   - key: Accept
     value: application/json
 queryParams:
   - key: status
-    value: under_review
+    value: withdrawn
     description: Filter by application status
   - key: productType
     value: auto_loan
@@ -16,55 +16,3 @@ queryParams:
     value: '25'
   - key: offset
     value: '0'
-examples:
-  - response:
-      statusCode: 200
-      statusText: OK
-      body:
-        type: json
-        content: |-
-          {
-            "data": [
-              {
-                "id": "string",
-                "applicantId": "string",
-                "productType": "string",
-                "requestedAmount": 4479.68854119488,
-                "termMonths": 7195,
-                "status": "approved",
-                "createdAt": "2005-01-16T18:54:09.704Z",
-                "updatedAt": "2020-09-29T15:11:34.755Z",
-                "underwritingResult": {
-                  "applicationId": "string",
-                  "status": "failed",
-                  "decision": "denied",
-                  "riskScore": 70,
-                  "evaluatedAt": "2021-01-21T15:17:05.201Z"
-                }
-              },
-              {
-                "id": "string",
-                "applicantId": "string",
-                "productType": "string",
-                "requestedAmount": 8998.835683519581,
-                "termMonths": 7946,
-                "status": "submitted",
-                "createdAt": "2016-12-20T09:17:11.944Z",
-                "updatedAt": "1954-10-05T01:10:12.927Z",
-                "underwritingResult": {
-                  "applicationId": "string",
-                  "status": "pending",
-                  "decision": "denied",
-                  "riskScore": 90,
-                  "evaluatedAt": "2026-05-03T09:41:30.888Z"
-                }
-              }
-            ],
-            "total": 2245,
-            "limit": 6852,
-            "offset": 9563
-          }
-      headers:
-        - key: Content-Type
-          value: application/json
-    name: List of applications

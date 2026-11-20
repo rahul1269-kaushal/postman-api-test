@@ -2,9 +2,9 @@ workspace:
   id: 9495baa9-935e-4c6f-b457-0073d17a37ec
 localResources:
   collections:
-    - ../postman/collections/[Baseline] claims-processing-service
-    - ../postman/collections/[Smoke] claims-processing-service
-    - ../postman/collections/[Contract] claims-processing-service
+    - ../postman/collections/[Baseline] loan-origination-service
+    - ../postman/collections/[Smoke] loan-origination-service
+    - ../postman/collections/[Contract] loan-origination-service
   environments:
     - ../postman/environments/prod.postman_environment.json
     - ../postman/environments/staging.postman_environment.json
@@ -15,9 +15,9 @@ localResources:
     - ../spec/payment-refund-api-openapi.yaml
 cloudResources:
   collections:
-    ../postman/collections/[Baseline] claims-processing-service: 28062698-fd2e23ce-5f88-4b1d-a473-73c3b4ee583b
-    ../postman/collections/[Smoke] claims-processing-service: 28062698-b9cc28b4-c122-4834-8ee6-497df4a332d8
-    ../postman/collections/[Contract] claims-processing-service: 28062698-ef7d501d-9b2a-4f7a-bdb8-a092a24940eb
+    ../postman/collections/[Baseline] loan-origination-service: 28062698-fd2e23ce-5f88-4b1d-a473-73c3b4ee583b
+    ../postman/collections/[Smoke] loan-origination-service: 28062698-b9cc28b4-c122-4834-8ee6-497df4a332d8
+    ../postman/collections/[Contract] loan-origination-service: 28062698-ef7d501d-9b2a-4f7a-bdb8-a092a24940eb
   environments:
     ../postman/environments/prod.postman_environment.json: 28062698-50a9fd36-8969-48c3-a1a2-048c3f36a0f5
     ../postman/environments/staging.postman_environment.json: 28062698-012bf419-c1c8-4ee8-9193-afa478a403e5

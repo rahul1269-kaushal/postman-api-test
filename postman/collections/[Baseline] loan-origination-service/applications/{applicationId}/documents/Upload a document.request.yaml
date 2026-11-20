@@ -18,29 +18,3 @@ body:
     - key: documentType
       value: bank_statement
       type: text
-examples:
-  - response:
-      statusCode: 201
-      statusText: Created
-      body:
-        type: json
-        content: |-
-          {
-            "id": "string",
-            "applicationId": "string",
-            "documentType": "string",
-            "fileName": "string",
-            "uploadedAt": "1960-03-26T15:47:24.923Z",
-            "verificationStatus": "verified"
-          }
-      headers:
-        - key: Content-Type
-          value: application/json
-    name: Document uploaded successfully
-  - response:
-      statusCode: 400
-      statusText: Bad Request
-      body:
-        type: text
-        content: ''
-    name: Invalid document or unsupported format

@@ -16,7 +16,7 @@ body:
     - key: file
       type: file
     - key: documentType
-      value: tax_return
+      value: employment_letter
       type: text
 scripts:
   - type: afterResponse
@@ -48,8 +48,8 @@ examples:
             "applicationId": "string",
             "documentType": "string",
             "fileName": "string",
-            "uploadedAt": "1955-03-13T02:32:05.791Z",
-            "verificationStatus": "pending"
+            "uploadedAt": "2019-10-08T21:15:20.172Z",
+            "verificationStatus": "verified"
           }
       headers:
         - key: Content-Type
