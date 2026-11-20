@@ -190,10 +190,10 @@ examples:
         content: |-
           {
             "applicationId": "string",
-            "status": "failed",
-            "decision": "approved",
-            "riskScore": 61,
-            "evaluatedAt": "2003-05-05T02:17:17.321Z"
+            "status": "in_progress",
+            "decision": "denied",
+            "riskScore": 29,
+            "evaluatedAt": "1971-03-10T13:59:58.582Z"
           }
       headers:
         - key: Content-Type

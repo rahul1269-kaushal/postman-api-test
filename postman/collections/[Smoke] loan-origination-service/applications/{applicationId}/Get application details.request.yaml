@@ -37,17 +37,17 @@ examples:
             "id": "string",
             "applicantId": "string",
             "productType": "string",
-            "requestedAmount": 5944.353523555399,
-            "termMonths": 2029,
+            "requestedAmount": 5117.655573869339,
+            "termMonths": 9703,
             "status": "denied",
-            "createdAt": "1948-07-11T21:40:17.307Z",
-            "updatedAt": "1960-03-28T21:23:16.467Z",
+            "createdAt": "1955-03-06T12:27:30.631Z",
+            "updatedAt": "1964-03-09T08:34:20.193Z",
             "underwritingResult": {
               "applicationId": "string",
-              "status": "failed",
+              "status": "pending",
               "decision": "denied",
-              "riskScore": 77,
-              "evaluatedAt": "2000-05-31T00:24:34.410Z"
+              "riskScore": 42,
+              "evaluatedAt": "2026-07-31T14:45:10.430Z"
             }
           }
       headers:

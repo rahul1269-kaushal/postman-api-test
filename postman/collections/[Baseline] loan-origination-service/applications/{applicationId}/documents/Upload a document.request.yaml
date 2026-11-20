@@ -16,7 +16,7 @@ body:
     - key: file
       type: file
     - key: documentType
-      value: identity
+      value: bank_statement
       type: text
 examples:
   - response:
@@ -30,8 +30,8 @@ examples:
             "applicationId": "string",
             "documentType": "string",
             "fileName": "string",
-            "uploadedAt": "1999-10-02T16:39:45.503Z",
-            "verificationStatus": "rejected"
+            "uploadedAt": "1960-03-26T15:47:24.923Z",
+            "verificationStatus": "verified"
           }
       headers:
         - key: Content-Type
