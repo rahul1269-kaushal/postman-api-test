@@ -15,12 +15,7 @@ examples:
           {
             "status": "healthy",
             "version": "string",
-            "uptime": "string",
-            "dependencies": {
-              "database": "string",
-              "creditBureau": "string",
-              "documentStore": "string"
-            }
+            "uptime": "string"
           }
       headers:
         - key: Content-Type

@@ -8,7 +8,7 @@ headers:
 scripts:
   - type: afterResponse
     code:
-      - var contract = JSON.parse("{\"method\":\"GET\",\"path\":\"/health\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"type\":\"object\",\"properties\":{\"status\":{\"type\":\"string\",\"enum\":[\"healthy\",\"degraded\",\"unhealthy\"]},\"version\":{\"type\":\"string\"},\"uptime\":{\"type\":\"string\"},\"dependencies\":{\"type\":\"object\",\"properties\":{\"database\":{\"type\":\"string\"},\"creditBureau\":{\"type\":\"string\"},\"documentStore\":{\"type\":\"string\"}}}},\"$schema\":\"http://json-schema.org/draft-07/schema#\"}}},\"hasBody\":true,\"headers\":[]}}}");
+      - var contract = JSON.parse("{\"method\":\"GET\",\"path\":\"/health\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"type\":\"object\",\"properties\":{\"status\":{\"type\":\"string\",\"enum\":[\"healthy\",\"degraded\",\"unhealthy\"]},\"version\":{\"type\":\"string\"},\"uptime\":{\"type\":\"string\"}},\"$schema\":\"http://json-schema.org/draft-07/schema#\"}}},\"hasBody\":true,\"headers\":[]}}}");
       - var validators = {};
       - validators["200"] = validators["200"] || {};
       - |-
@@ -50,36 +50,6 @@ scripts:
                 if (validate.errors === null) validate.errors = []
                 validate.errors.push({ keywordLocation: "#/properties/uptime/type", instanceLocation: "#/uptime" })
                 errorCount++
-              }
-            }
-            if (data.dependencies !== undefined && hasOwn(data, "dependencies")) {
-              if (!(typeof data.dependencies === "object" && data.dependencies && !Array.isArray(data.dependencies))) {
-                if (validate.errors === null) validate.errors = []
-                validate.errors.push({ keywordLocation: "#/properties/dependencies/type", instanceLocation: "#/dependencies" })
-                errorCount++
-              }
-              else {
-                if (data.dependencies.database !== undefined && hasOwn(data.dependencies, "database")) {
-                  if (!(typeof data.dependencies.database === "string")) {
-                    if (validate.errors === null) validate.errors = []
-                    validate.errors.push({ keywordLocation: "#/properties/dependencies/properties/database/type", instanceLocation: "#/dependencies/database" })
-                    errorCount++
-                  }
-                }
-                if (data.dependencies.creditBureau !== undefined && hasOwn(data.dependencies, "creditBureau")) {
-                  if (!(typeof data.dependencies.creditBureau === "string")) {
-                    if (validate.errors === null) validate.errors = []
-                    validate.errors.push({ keywordLocation: "#/properties/dependencies/properties/creditBureau/type", instanceLocation: "#/dependencies/creditBureau" })
-                    errorCount++
-                  }
-                }
-                if (data.dependencies.documentStore !== undefined && hasOwn(data.dependencies, "documentStore")) {
-                  if (!(typeof data.dependencies.documentStore === "string")) {
-                    if (validate.errors === null) validate.errors = []
-                    validate.errors.push({ keywordLocation: "#/properties/dependencies/properties/documentStore/type", instanceLocation: "#/dependencies/documentStore" })
-                    errorCount++
-                  }
-                }
               }
             }
           }
@@ -172,14 +142,9 @@ examples:
         type: json
         content: |-
           {
-            "status": "healthy",
+            "status": "degraded",
             "version": "string",
-            "uptime": "string",
-            "dependencies": {
-              "database": "string",
-              "creditBureau": "string",
-              "documentStore": "string"
-            }
+            "uptime": "string"
           }
       headers:
         - key: Content-Type
