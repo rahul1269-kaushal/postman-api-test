@@ -16,5 +16,31 @@ body:
     - key: file
       type: file
     - key: documentType
-      value: bank_statement
+      value: income_verification
       type: text
+examples:
+  - response:
+      statusCode: 201
+      statusText: Created
+      body:
+        type: json
+        content: |-
+          {
+            "id": "string",
+            "applicationId": "string",
+            "documentType": "string",
+            "fileName": "string",
+            "uploadedAt": "2017-07-24T04:03:37.375Z",
+            "verificationStatus": "pending"
+          }
+      headers:
+        - key: Content-Type
+          value: application/json
+    name: Document uploaded successfully
+  - response:
+      statusCode: 400
+      statusText: Bad Request
+      body:
+        type: text
+        content: ''
+    name: Invalid document or unsupported format

@@ -17,3 +17,35 @@ body:
       "reevaluationReason": "string",
       "includeManualReview": false
     }
+examples:
+  - response:
+      statusCode: 202
+      statusText: Accepted
+      body:
+        type: json
+        content: |-
+          {
+            "applicationId": "string",
+            "status": "failed",
+            "decision": "referred_to_manual",
+            "riskScore": 90,
+            "evaluatedAt": "2002-02-08T14:13:24.449Z"
+          }
+      headers:
+        - key: Content-Type
+          value: application/json
+    name: Underwriting evaluation queued
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: Application not found
+  - response:
+      statusCode: 409
+      statusText: Conflict
+      body:
+        type: text
+        content: ''
+    name: Underwriting already in progress

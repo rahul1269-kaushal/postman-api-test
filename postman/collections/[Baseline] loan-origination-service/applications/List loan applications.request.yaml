@@ -1,18 +1,70 @@
 type: http
 name: List loan applications
-url: '{{baseUrl}}/applications?status=withdrawn&productType=auto_loan&limit=25&offset=0'
+url: '{{baseUrl}}/applications?status=approved&productType=business_loan&limit=25&offset=0'
 method: GET
 headers:
   - key: Accept
     value: application/json
 queryParams:
   - key: status
-    value: withdrawn
+    value: approved
     description: Filter by application status
   - key: productType
-    value: auto_loan
+    value: business_loan
     description: Filter by loan product type
   - key: limit
     value: '25'
   - key: offset
     value: '0'
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: json
+        content: |-
+          {
+            "data": [
+              {
+                "id": "string",
+                "applicantId": "string",
+                "productType": "string",
+                "requestedAmount": 9449.156367421598,
+                "termMonths": 4796,
+                "status": "submitted",
+                "createdAt": "1972-09-11T20:34:55.387Z",
+                "updatedAt": "1986-10-13T15:11:04.498Z",
+                "underwritingResult": {
+                  "applicationId": "string",
+                  "status": "in_progress",
+                  "decision": "approved",
+                  "riskScore": 59,
+                  "evaluatedAt": "1984-08-23T18:56:17.149Z"
+                }
+              },
+              {
+                "id": "string",
+                "applicantId": "string",
+                "productType": "string",
+                "requestedAmount": 1975.5722830762156,
+                "termMonths": 5454,
+                "status": "under_review",
+                "createdAt": "1986-09-01T16:44:16.660Z",
+                "updatedAt": "1966-09-08T22:16:51.367Z",
+                "underwritingResult": {
+                  "applicationId": "string",
+                  "status": "pending",
+                  "decision": "referred_to_manual",
+                  "riskScore": 88,
+                  "evaluatedAt": "2022-09-14T02:13:33.093Z"
+                }
+              }
+            ],
+            "total": 1810,
+            "limit": 1704,
+            "offset": 3482
+          }
+      headers:
+        - key: Content-Type
+          value: application/json
+    name: List of applications

@@ -45,9 +45,9 @@ examples:
           {
             "applicationId": "string",
             "status": "in_progress",
-            "decision": "approved",
-            "riskScore": 54,
-            "evaluatedAt": "2023-05-09T21:34:19.886Z"
+            "decision": "denied",
+            "riskScore": 26,
+            "evaluatedAt": "2014-12-11T08:59:35.663Z"
           }
       headers:
         - key: Content-Type

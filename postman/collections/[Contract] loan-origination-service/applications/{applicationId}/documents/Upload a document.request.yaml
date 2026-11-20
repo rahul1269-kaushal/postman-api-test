@@ -181,7 +181,7 @@ examples:
             "applicationId": "string",
             "documentType": "string",
             "fileName": "string",
-            "uploadedAt": "1981-02-19T19:21:52.931Z",
+            "uploadedAt": "2018-12-16T17:48:52.979Z",
             "verificationStatus": "verified"
           }
       headers:

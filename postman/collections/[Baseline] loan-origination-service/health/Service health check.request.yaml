@@ -5,3 +5,24 @@ method: GET
 headers:
   - key: Accept
     value: application/json
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: json
+        content: |-
+          {
+            "status": "unhealthy",
+            "version": "string",
+            "uptime": "string",
+            "dependencies": {
+              "database": "string",
+              "creditBureau": "string",
+              "documentStore": "string"
+            }
+          }
+      headers:
+        - key: Content-Type
+          value: application/json
+    name: Service is healthy

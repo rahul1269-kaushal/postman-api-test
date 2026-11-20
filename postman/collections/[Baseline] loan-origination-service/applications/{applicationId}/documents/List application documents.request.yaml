@@ -8,3 +8,32 @@ headers:
 pathVariables:
   - key: applicationId
     value: string
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: json
+        content: |-
+          [
+            {
+              "id": "string",
+              "applicationId": "string",
+              "documentType": "string",
+              "fileName": "string",
+              "uploadedAt": "1973-04-12T10:53:55.406Z",
+              "verificationStatus": "pending"
+            },
+            {
+              "id": "string",
+              "applicationId": "string",
+              "documentType": "string",
+              "fileName": "string",
+              "uploadedAt": "2002-08-02T19:20:53.588Z",
+              "verificationStatus": "verified"
+            }
+          ]
+      headers:
+        - key: Content-Type
+          value: application/json
+    name: List of documents

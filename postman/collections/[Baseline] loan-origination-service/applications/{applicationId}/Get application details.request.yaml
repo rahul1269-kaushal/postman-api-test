@@ -8,3 +8,46 @@ headers:
 pathVariables:
   - key: applicationId
     value: string
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: json
+        content: |-
+          {
+            "id": "string",
+            "applicantId": "string",
+            "productType": "string",
+            "requestedAmount": 1797.4044086560225,
+            "termMonths": 9883,
+            "status": "submitted",
+            "createdAt": "1992-05-26T14:14:12.272Z",
+            "updatedAt": "1948-07-06T12:44:06.809Z",
+            "underwritingResult": {
+              "applicationId": "string",
+              "status": "pending",
+              "decision": "denied",
+              "riskScore": 75,
+              "evaluatedAt": "1996-05-16T12:44:45.057Z"
+            }
+          }
+      headers:
+        - key: Content-Type
+          value: application/json
+    name: Application details
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: json
+        content: |-
+          {
+            "code": "string",
+            "message": "string",
+            "details": {}
+          }
+      headers:
+        - key: Content-Type
+          value: application/json
+    name: Application not found

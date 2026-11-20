@@ -16,7 +16,7 @@ body:
     - key: file
       type: file
     - key: documentType
-      value: employment_letter
+      value: identity
       type: text
 scripts:
   - type: afterResponse
@@ -48,8 +48,8 @@ examples:
             "applicationId": "string",
             "documentType": "string",
             "fileName": "string",
-            "uploadedAt": "2019-10-08T21:15:20.172Z",
-            "verificationStatus": "verified"
+            "uploadedAt": "1963-08-08T03:48:34.995Z",
+            "verificationStatus": "rejected"
           }
       headers:
         - key: Content-Type
