@@ -37,16 +37,12 @@ auth:
 variables:
   - key: baseUrl
     value: https://api.payments.example.com/v2
-    type: any
   - key: baseUrl1
     value: https://api-uat.payments.example.com/v2
-    type: any
   - key: baseUrl2
     value: https://api-qa.payments.example.com/v2
-    type: any
   - key: baseUrl3
     value: https://api-dev.payments.example.com/v2
-    type: any
 items:
   - ref: ./refunds/folder.yaml
   - ref: ./health/folder.yaml
