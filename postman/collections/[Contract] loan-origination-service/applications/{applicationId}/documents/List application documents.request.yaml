@@ -182,7 +182,7 @@ examples:
               "applicationId": "string",
               "documentType": "string",
               "fileName": "string",
-              "uploadedAt": "1995-03-21T12:17:02.070Z",
+              "uploadedAt": "1979-11-30T21:43:48.444Z",
               "verificationStatus": "pending"
             },
             {
@@ -190,7 +190,7 @@ examples:
               "applicationId": "string",
               "documentType": "string",
               "fileName": "string",
-              "uploadedAt": "1979-06-15T06:36:51.729Z",
+              "uploadedAt": "1995-08-20T07:53:14.074Z",
               "verificationStatus": "rejected"
             }
           ]

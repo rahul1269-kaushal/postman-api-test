@@ -172,7 +172,7 @@ examples:
         type: json
         content: |-
           {
-            "status": "degraded",
+            "status": "healthy",
             "version": "string",
             "uptime": "string",
             "dependencies": {
