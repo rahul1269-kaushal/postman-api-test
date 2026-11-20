@@ -26,3 +26,49 @@ scripts:
       - '    }'
       - '});'
     language: text/javascript
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: json
+        content: |-
+          {
+            "id": "string",
+            "policyId": "string",
+            "lineOfBusiness": "string",
+            "status": "filed",
+            "incidentDate": "1986-10-05",
+            "description": "string",
+            "estimatedDamage": 9038.027652516997,
+            "filedAt": "2013-01-26T15:34:16.640Z",
+            "updatedAt": "2017-05-27T23:17:31.412Z",
+            "assignedAdjuster": "string",
+            "adjudication": {
+              "claimId": "string",
+              "decision": "string",
+              "approvedAmount": 1350.2545033493275,
+              "adjudicatedAt": "2013-08-06T09:26:32.865Z",
+              "adjusterNotes": "string"
+            },
+            "settlement": {
+              "claimId": "string",
+              "amount": 1720.5212678130465,
+              "paymentMethod": "string",
+              "status": "failed",
+              "initiatedAt": "1977-02-02T11:25:52.016Z",
+              "completedAt": "1997-11-14T23:44:07.583Z",
+              "referenceNumber": "string"
+            }
+          }
+      headers:
+        - key: Content-Type
+          value: application/json
+    name: Claim details
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: Claim not found

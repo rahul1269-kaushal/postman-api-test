@@ -22,3 +22,64 @@ body:
         "email": "jane.smith@example.com"
       }
     }
+examples:
+  - response:
+      statusCode: 201
+      statusText: Created
+      body:
+        type: json
+        content: |-
+          {
+            "id": "string",
+            "policyId": "string",
+            "lineOfBusiness": "string",
+            "status": "adjudicated",
+            "incidentDate": "1996-02-10",
+            "description": "string",
+            "estimatedDamage": 3354.959182728967,
+            "filedAt": "1992-10-21T12:52:57.336Z",
+            "updatedAt": "1985-12-19T15:18:33.266Z",
+            "assignedAdjuster": "string",
+            "adjudication": {
+              "claimId": "string",
+              "decision": "string",
+              "approvedAmount": 6096.540375010771,
+              "adjudicatedAt": "2013-12-11T03:42:45.675Z",
+              "adjusterNotes": "string"
+            },
+            "settlement": {
+              "claimId": "string",
+              "amount": 404.8234384383342,
+              "paymentMethod": "string",
+              "status": "completed",
+              "initiatedAt": "2004-12-07T11:03:17.822Z",
+              "completedAt": "2016-04-04T21:43:08.204Z",
+              "referenceNumber": "string"
+            }
+          }
+      headers:
+        - key: Content-Type
+          value: application/json
+    name: Claim filed successfully
+  - response:
+      statusCode: 400
+      statusText: Bad Request
+      body:
+        type: json
+        content: |-
+          {
+            "code": "string",
+            "message": "string",
+            "details": {}
+          }
+      headers:
+        - key: Content-Type
+          value: application/json
+    name: Invalid claim data
+  - response:
+      statusCode: 409
+      statusText: Conflict
+      body:
+        type: text
+        content: ''
+    name: Duplicate claim for this incident

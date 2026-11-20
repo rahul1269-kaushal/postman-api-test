@@ -166,3 +166,30 @@ scripts:
       - '  if (!validate(value)) pm.expect.fail("OpenAPI schema validation failed for " + contract.method + " " + contract.path + " status " + pm.response.code + ": " + JSON.stringify(validate.errors || []));'
       - '});'
     language: text/javascript
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: json
+        content: |-
+          {
+            "claimId": "string",
+            "amount": 1805.434417077212,
+            "paymentMethod": "string",
+            "status": "initiated",
+            "initiatedAt": "1955-07-21T17:51:40.518Z",
+            "completedAt": "1964-12-22T02:26:35.750Z",
+            "referenceNumber": "string"
+          }
+      headers:
+        - key: Content-Type
+          value: application/json
+    name: Settlement details
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: No settlement found for this claim

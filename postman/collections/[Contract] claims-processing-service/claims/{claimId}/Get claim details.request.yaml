@@ -296,3 +296,49 @@ scripts:
       - '  if (!validate(value)) pm.expect.fail("OpenAPI schema validation failed for " + contract.method + " " + contract.path + " status " + pm.response.code + ": " + JSON.stringify(validate.errors || []));'
       - '});'
     language: text/javascript
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: json
+        content: |-
+          {
+            "id": "string",
+            "policyId": "string",
+            "lineOfBusiness": "string",
+            "status": "settled",
+            "incidentDate": "2019-08-18",
+            "description": "string",
+            "estimatedDamage": 6256.761332564353,
+            "filedAt": "2020-11-15T06:51:36.291Z",
+            "updatedAt": "1988-03-02T17:07:52.650Z",
+            "assignedAdjuster": "string",
+            "adjudication": {
+              "claimId": "string",
+              "decision": "string",
+              "approvedAmount": 9882.114424081314,
+              "adjudicatedAt": "1950-07-21T16:48:05.090Z",
+              "adjusterNotes": "string"
+            },
+            "settlement": {
+              "claimId": "string",
+              "amount": 294.4819712758073,
+              "paymentMethod": "string",
+              "status": "failed",
+              "initiatedAt": "2002-11-06T23:52:09.777Z",
+              "completedAt": "1987-09-20T08:31:17.126Z",
+              "referenceNumber": "string"
+            }
+          }
+      headers:
+        - key: Content-Type
+          value: application/json
+    name: Claim details
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: Claim not found

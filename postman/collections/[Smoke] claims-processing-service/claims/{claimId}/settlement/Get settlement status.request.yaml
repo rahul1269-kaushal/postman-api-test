@@ -26,3 +26,30 @@ scripts:
       - '    }'
       - '});'
     language: text/javascript
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: json
+        content: |-
+          {
+            "claimId": "string",
+            "amount": 1427.9145158466656,
+            "paymentMethod": "string",
+            "status": "failed",
+            "initiatedAt": "1957-06-03T18:13:57.100Z",
+            "completedAt": "1987-05-30T00:08:58.852Z",
+            "referenceNumber": "string"
+          }
+      headers:
+        - key: Content-Type
+          value: application/json
+    name: Settlement details
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: No settlement found for this claim

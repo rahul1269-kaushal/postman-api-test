@@ -23,3 +23,19 @@ scripts:
       - '    }'
       - '});'
     language: text/javascript
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: json
+        content: |-
+          {
+            "status": "unhealthy",
+            "version": "string",
+            "uptime": "string"
+          }
+      headers:
+        - key: Content-Type
+          value: application/json
+    name: Service is healthy

@@ -15,7 +15,7 @@ body:
   content: |-
     {
       "decision": "denied",
-      "approvedAmount": 2146.618345430139,
+      "approvedAmount": 5262.656202030791,
       "adjusterNotes": "string",
       "denialReason": "string",
       "isAutomated": false
@@ -158,3 +158,35 @@ scripts:
       - '  if (!validate(value)) pm.expect.fail("OpenAPI schema validation failed for " + contract.method + " " + contract.path + " status " + pm.response.code + ": " + JSON.stringify(validate.errors || []));'
       - '});'
     language: text/javascript
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: json
+        content: |-
+          {
+            "claimId": "string",
+            "decision": "string",
+            "approvedAmount": 6628.362999008621,
+            "adjudicatedAt": "2016-09-10T10:29:55.730Z",
+            "adjusterNotes": "string"
+          }
+      headers:
+        - key: Content-Type
+          value: application/json
+    name: Adjudication recorded
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: Claim not found
+  - response:
+      statusCode: 409
+      statusText: Conflict
+      body:
+        type: text
+        content: ''
+    name: Claim already adjudicated

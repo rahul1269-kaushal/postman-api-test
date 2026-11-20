@@ -1,19 +1,19 @@
 type: http
 name: List claims
-url: '{{baseUrl}}/claims?status=triaged&lineOfBusiness=property&filedAfter=2025-04-29&filedBefore=2025-04-29&limit=25&offset=0'
+url: '{{baseUrl}}/claims?status=under_investigation&lineOfBusiness=workers_comp&filedAfter=2010-06-11&filedBefore=2010-06-11&limit=25&offset=0'
 method: GET
 headers:
   - key: Accept
     value: application/json
 queryParams:
   - key: status
-    value: triaged
+    value: under_investigation
   - key: lineOfBusiness
-    value: property
+    value: workers_comp
   - key: filedAfter
-    value: '2025-04-29'
+    value: '2010-06-11'
   - key: filedBefore
-    value: '2025-04-29'
+    value: '2010-06-11'
   - key: limit
     value: '25'
   - key: offset
@@ -36,3 +36,77 @@ scripts:
       - '    }'
       - '});'
     language: text/javascript
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: json
+        content: |-
+          {
+            "data": [
+              {
+                "id": "string",
+                "policyId": "string",
+                "lineOfBusiness": "string",
+                "status": "settled",
+                "incidentDate": "1960-01-28",
+                "description": "string",
+                "estimatedDamage": 9778.626619417764,
+                "filedAt": "1995-06-26T17:40:43.363Z",
+                "updatedAt": "1978-10-01T18:53:44.829Z",
+                "assignedAdjuster": "string",
+                "adjudication": {
+                  "claimId": "string",
+                  "decision": "string",
+                  "approvedAmount": 4749.681974775009,
+                  "adjudicatedAt": "1965-07-10T17:21:10.128Z",
+                  "adjusterNotes": "string"
+                },
+                "settlement": {
+                  "claimId": "string",
+                  "amount": 5107.792170374342,
+                  "paymentMethod": "string",
+                  "status": "initiated",
+                  "initiatedAt": "1976-06-17T05:32:24.135Z",
+                  "completedAt": "1957-11-02T05:10:29.727Z",
+                  "referenceNumber": "string"
+                }
+              },
+              {
+                "id": "string",
+                "policyId": "string",
+                "lineOfBusiness": "string",
+                "status": "denied",
+                "incidentDate": "2006-10-10",
+                "description": "string",
+                "estimatedDamage": 5682.938499609731,
+                "filedAt": "1965-11-11T19:48:48.287Z",
+                "updatedAt": "2019-05-07T18:03:42.747Z",
+                "assignedAdjuster": "string",
+                "adjudication": {
+                  "claimId": "string",
+                  "decision": "string",
+                  "approvedAmount": 1088.6206653031015,
+                  "adjudicatedAt": "1958-10-08T09:14:50.195Z",
+                  "adjusterNotes": "string"
+                },
+                "settlement": {
+                  "claimId": "string",
+                  "amount": 8259.523243290405,
+                  "paymentMethod": "string",
+                  "status": "completed",
+                  "initiatedAt": "1973-08-07T21:24:37.013Z",
+                  "completedAt": "1949-12-23T04:15:28.157Z",
+                  "referenceNumber": "string"
+                }
+              }
+            ],
+            "total": 8550,
+            "limit": 5312,
+            "offset": 9073
+          }
+      headers:
+        - key: Content-Type
+          value: application/json
+    name: List of claims
