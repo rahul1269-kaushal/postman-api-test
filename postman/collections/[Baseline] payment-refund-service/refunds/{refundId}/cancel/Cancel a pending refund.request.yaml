@@ -1,0 +1,19 @@
+type: http
+name: Cancel a pending refund
+url: '{{baseUrl}}/refunds/:refundId/cancel'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+  - key: Accept
+    value: application/json
+pathVariables:
+  - key: refundId
+    value: rfnd_abc123def456
+    description: Unique identifier for the refund
+body:
+  type: json
+  content: |-
+    {
+      "reason": "Customer changed mind and wants to keep the item"
+    }

@@ -1,0 +1,11 @@
+type: http
+name: Get refund status
+url: '{{baseUrl}}/refunds/:refundId/status'
+method: GET
+headers:
+  - key: Accept
+    value: application/json
+pathVariables:
+  - key: refundId
+    value: rfnd_abc123def456
+    description: Unique identifier for the refund
