@@ -1,0 +1,112 @@
+type: http
+name: List claims
+url: '{{baseUrl}}/claims?status=denied&lineOfBusiness=liability&filedAfter=2021-03-14&filedBefore=2021-03-14&limit=25&offset=0'
+method: GET
+headers:
+  - key: Accept
+    value: application/json
+queryParams:
+  - key: status
+    value: denied
+  - key: lineOfBusiness
+    value: liability
+  - key: filedAfter
+    value: '2021-03-14'
+  - key: filedBefore
+    value: '2021-03-14'
+  - key: limit
+    value: '25'
+  - key: offset
+    value: '0'
+scripts:
+  - type: afterResponse
+    code:
+      - // [Smoke] Auto-generated test assertions
+      - pm.test('Status code is successful (2xx)', function () {
+      - '    pm.response.to.be.success;'
+      - '});'
+      - pm.test('Response time is acceptable', function () {
+      - '    var threshold = parseInt(pm.environment.get(''RESPONSE_TIME_THRESHOLD'') || ''2000'', 10);'
+      - '    pm.expect(pm.response.responseTime).to.be.below(threshold);'
+      - '});'
+      - pm.test('Response body is not empty', function () {
+      - '    if (pm.response.code !== 204) {'
+      - '        var body = pm.response.text();'
+      - '        pm.expect(body.length).to.be.above(0);'
+      - '    }'
+      - '});'
+    language: text/javascript
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: json
+        content: |-
+          {
+            "data": [
+              {
+                "id": "string",
+                "policyId": "string",
+                "lineOfBusiness": "string",
+                "status": "triaged",
+                "incidentDate": "2005-11-08",
+                "description": "string",
+                "estimatedDamage": 1083.3568021559126,
+                "filedAt": "1977-08-19T17:44:25.112Z",
+                "updatedAt": "1993-08-06T08:10:30.369Z",
+                "assignedAdjuster": "string",
+                "adjudication": {
+                  "claimId": "string",
+                  "decision": "string",
+                  "approvedAmount": 1760.69800320946,
+                  "adjudicatedAt": "2002-08-24T05:12:04.018Z",
+                  "adjusterNotes": "string"
+                },
+                "settlement": {
+                  "claimId": "string",
+                  "amount": 7198.648701648015,
+                  "paymentMethod": "string",
+                  "status": "completed",
+                  "initiatedAt": "2023-10-23T19:46:26.951Z",
+                  "completedAt": "1994-08-12T08:54:40.041Z",
+                  "referenceNumber": "string"
+                }
+              },
+              {
+                "id": "string",
+                "policyId": "string",
+                "lineOfBusiness": "string",
+                "status": "filed",
+                "incidentDate": "1963-03-11",
+                "description": "string",
+                "estimatedDamage": 185.87683011265233,
+                "filedAt": "2020-01-22T03:16:00.564Z",
+                "updatedAt": "1946-11-23T11:22:04.305Z",
+                "assignedAdjuster": "string",
+                "adjudication": {
+                  "claimId": "string",
+                  "decision": "string",
+                  "approvedAmount": 6119.9898703132185,
+                  "adjudicatedAt": "1998-11-23T06:15:51.706Z",
+                  "adjusterNotes": "string"
+                },
+                "settlement": {
+                  "claimId": "string",
+                  "amount": 5010.209673776852,
+                  "paymentMethod": "string",
+                  "status": "completed",
+                  "initiatedAt": "1956-09-24T06:44:36.586Z",
+                  "completedAt": "2017-02-08T12:25:01.045Z",
+                  "referenceNumber": "string"
+                }
+              }
+            ],
+            "total": 5131,
+            "limit": 4875,
+            "offset": 9260
+          }
+      headers:
+        - key: Content-Type
+          value: application/json
+    name: List of claims

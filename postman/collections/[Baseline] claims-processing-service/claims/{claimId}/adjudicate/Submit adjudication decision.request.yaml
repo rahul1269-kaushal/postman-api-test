@@ -1,0 +1,54 @@
+type: http
+name: Submit adjudication decision
+url: '{{baseUrl}}/claims/:claimId/adjudicate'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+  - key: Accept
+    value: application/json
+pathVariables:
+  - key: claimId
+    value: string
+body:
+  type: json
+  content: |-
+    {
+      "decision": "partial_approval",
+      "approvedAmount": 7354.477420064184,
+      "adjusterNotes": "string",
+      "denialReason": "string",
+      "isAutomated": false
+    }
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: json
+        content: |-
+          {
+            "claimId": "string",
+            "decision": "string",
+            "approvedAmount": 9345.14485385292,
+            "adjudicatedAt": "1965-01-15T05:10:07.784Z",
+            "adjusterNotes": "string"
+          }
+      headers:
+        - key: Content-Type
+          value: application/json
+    name: Adjudication recorded
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: Claim not found
+  - response:
+      statusCode: 409
+      statusText: Conflict
+      body:
+        type: text
+        content: ''
+    name: Claim already adjudicated
