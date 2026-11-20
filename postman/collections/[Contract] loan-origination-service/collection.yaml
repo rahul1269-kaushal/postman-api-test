@@ -1,0 +1,41 @@
+$schema: https://schema.postman.com/json/draft-2020-12/collection/v3.0.0/
+type: collection
+name: '[Contract] loan-origination-service'
+description: |-
+  API for managing loan application origination, underwriting decisions, and
+  document collection in the Lending domain. This service handles the full
+  lifecycle from application submission through approval or denial.
+
+  **Authentication:**
+  - Service-to-service: mTLS (mutual TLS)
+  - Internal gateway: JWT token (Bearer token)
+
+  **Rate Limits:**
+  - Standard: 200 requests/minute
+  - Batch operations: 50 requests/minute
+
+
+  Contact Support:
+   Name: Lending Platform Team
+   Email: lending-platform@example.com
+id: 8b5850bf-2829-49c1-b40e-3ce2cb5063d7
+auth:
+  type: bearer
+  credentials:
+    - key: token
+      value: '{{bearerToken}}'
+      type: string
+variables:
+  - key: baseUrl
+    value: https://lending-api.example.com/v1
+    type: any
+  - key: baseUrl1
+    value: https://lending-api-staging.example.com/v1
+    type: any
+  - key: baseUrl2
+    value: https://lending-api-dev.example.com/v1
+    type: any
+items:
+  - ref: ./applications/folder.yaml
+  - ref: ./health/folder.yaml
+  - ref: ./00 - Resolve Secrets.request.yaml
