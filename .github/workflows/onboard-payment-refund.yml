@@ -9,7 +9,6 @@ jobs:
     permissions:
       contents: write
       actions: write
-      workflows: write
 
     steps:
       - name: Check out repository
@@ -30,6 +29,7 @@ jobs:
               "qa":   "https://api-qa.payments.example.com/v2",
               "dev":  "https://api-dev.payments.example.com/v2"
             }
+          generate-ci-workflow: false
           postman-api-key: ${{ secrets.POSTMAN_API_KEY }}
           postman-access-token: ${{ secrets.POSTMAN_ACCESS_TOKEN }}
           github-token: ${{ github.token }}

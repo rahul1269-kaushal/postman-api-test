@@ -9,7 +9,6 @@ jobs:
     permissions:
       contents: write
       actions: write
-      workflows: write
 
     steps:
       - name: Check out repository
@@ -34,6 +33,7 @@ jobs:
           # Leave blank and the action skips mTLS setup without failing the run.
           ssl-client-cert: ${{ secrets.LOAN_SSL_CLIENT_CERT }}
           ssl-client-key: ${{ secrets.LOAN_SSL_CLIENT_KEY }}
+          generate-ci-workflow: false
           postman-api-key: ${{ secrets.POSTMAN_API_KEY }}
           postman-access-token: ${{ secrets.POSTMAN_ACCESS_TOKEN }}
           github-token: ${{ github.token }}

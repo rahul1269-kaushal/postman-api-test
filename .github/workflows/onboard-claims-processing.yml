@@ -9,7 +9,6 @@ jobs:
     permissions:
       contents: write
       actions: write
-      workflows: write
 
     steps:
       - name: Check out repository
@@ -27,6 +26,7 @@ jobs:
           # This workflow onboards the spec and generates Postman assets from GitHub.
           # Integrating the generated collections into their GitLab pipelines is a
           # separate platform-team coordination step covered in the adaptation analysis.
+          generate-ci-workflow: false
           postman-api-key: ${{ secrets.POSTMAN_API_KEY }}
           postman-access-token: ${{ secrets.POSTMAN_ACCESS_TOKEN }}
           github-token: ${{ github.token }}
