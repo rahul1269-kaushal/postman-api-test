@@ -16,7 +16,7 @@ body:
     - key: file
       type: file
     - key: documentType
-      value: bank_statement
+      value: income_verification
       type: text
 scripts:
   - type: afterResponse
@@ -181,8 +181,8 @@ examples:
             "applicationId": "string",
             "documentType": "string",
             "fileName": "string",
-            "uploadedAt": "1953-04-28T20:39:50.690Z",
-            "verificationStatus": "pending"
+            "uploadedAt": "1999-04-28T00:51:18.829Z",
+            "verificationStatus": "verified"
           }
       headers:
         - key: Content-Type

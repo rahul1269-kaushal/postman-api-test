@@ -39,15 +39,15 @@ examples:
               "applicationId": "string",
               "documentType": "string",
               "fileName": "string",
-              "uploadedAt": "2002-04-27T20:24:40.168Z",
-              "verificationStatus": "pending"
+              "uploadedAt": "2024-03-30T15:24:01.229Z",
+              "verificationStatus": "rejected"
             },
             {
               "id": "string",
               "applicationId": "string",
               "documentType": "string",
               "fileName": "string",
-              "uploadedAt": "1960-01-10T11:44:33.235Z",
+              "uploadedAt": "2015-12-04T15:58:16.279Z",
               "verificationStatus": "rejected"
             }
           ]

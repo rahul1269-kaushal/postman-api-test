@@ -31,9 +31,14 @@ examples:
         type: json
         content: |-
           {
-            "status": "degraded",
+            "status": "healthy",
             "version": "string",
-            "uptime": "string"
+            "uptime": "string",
+            "dependencies": {
+              "database": "string",
+              "creditBureau": "string",
+              "documentStore": "string"
+            }
           }
       headers:
         - key: Content-Type

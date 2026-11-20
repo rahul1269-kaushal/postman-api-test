@@ -182,16 +182,16 @@ examples:
               "applicationId": "string",
               "documentType": "string",
               "fileName": "string",
-              "uploadedAt": "1949-02-14T03:16:20.142Z",
-              "verificationStatus": "rejected"
+              "uploadedAt": "2019-06-19T14:08:22.162Z",
+              "verificationStatus": "pending"
             },
             {
               "id": "string",
               "applicationId": "string",
               "documentType": "string",
               "fileName": "string",
-              "uploadedAt": "1954-01-26T10:23:21.724Z",
-              "verificationStatus": "rejected"
+              "uploadedAt": "1988-10-11T21:16:34.036Z",
+              "verificationStatus": "pending"
             }
           ]
       headers:

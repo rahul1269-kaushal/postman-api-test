@@ -16,7 +16,7 @@ body:
     - key: file
       type: file
     - key: documentType
-      value: employment_letter
+      value: identity
       type: text
 examples:
   - response:
@@ -30,7 +30,7 @@ examples:
             "applicationId": "string",
             "documentType": "string",
             "fileName": "string",
-            "uploadedAt": "2002-03-17T20:18:40.402Z",
+            "uploadedAt": "2007-06-25T07:58:33.032Z",
             "verificationStatus": "verified"
           }
       headers:
