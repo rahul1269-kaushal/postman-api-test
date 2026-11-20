@@ -1,4 +1,0 @@
-type: folder
-name: adjudicate
-items:
-  - ref: ./Submit adjudication decision.request.yaml

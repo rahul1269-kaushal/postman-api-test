@@ -19,7 +19,7 @@ jobs:
         with:
           project-name: claims-processing-service
           spec-url: https://raw.githubusercontent.com/${{ github.repository }}/main/spec/claims-processing-api-openapi.yaml
-          spec-path: spec/claims-processing-api-openapi.yaml
+          working-directory: .postman-state/claims-processing
           domain: insurance
           environments-json: '["prod","staging","dev"]'
           # Note: This service deploys via GitLab CI, not GitHub Actions.

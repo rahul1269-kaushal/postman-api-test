@@ -19,7 +19,7 @@ jobs:
         with:
           project-name: payment-refund-service
           spec-url: https://raw.githubusercontent.com/${{ github.repository }}/main/spec/payment-refund-api-openapi.yaml
-          spec-path: spec/payment-refund-api-openapi.yaml
+          working-directory: .postman-state/payment-refund
           domain: payments
           environments-json: '["prod","uat","qa","dev"]'
           env-runtime-urls-json: >-

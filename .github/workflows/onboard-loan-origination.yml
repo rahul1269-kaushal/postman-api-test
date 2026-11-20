@@ -19,7 +19,7 @@ jobs:
         with:
           project-name: loan-origination-service
           spec-url: https://raw.githubusercontent.com/${{ github.repository }}/main/spec/loan-origination-api-openapi.yaml
-          spec-path: spec/loan-origination-api-openapi.yaml
+          working-directory: .postman-state/loan-origination
           domain: lending
           environments-json: '["prod","staging","dev"]'
           env-runtime-urls-json: >-
