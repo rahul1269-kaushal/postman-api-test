@@ -19,12 +19,14 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
+      - name: Clear shared state file
+        run: rm -f .postman/resources.yaml
+
       - name: Onboard Payment Refund Service into Postman
         uses: postman-cs/postman-api-onboarding-action@v0
         with:
           project-name: payment-refund-service
           spec-url: https://raw.githubusercontent.com/${{ github.repository }}/main/spec/payment-refund-api-openapi.yaml
-          working-directory: .postman-state/payment-refund
           artifact-dir: postman/payment-refund
           domain: payments
           environments-json: '["prod","uat","qa","dev"]'

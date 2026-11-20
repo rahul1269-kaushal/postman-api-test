@@ -19,12 +19,14 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
+      - name: Clear shared state file
+        run: rm -f .postman/resources.yaml
+
       - name: Onboard Loan Origination Service into Postman
         uses: postman-cs/postman-api-onboarding-action@v0
         with:
           project-name: loan-origination-service
           spec-url: https://raw.githubusercontent.com/${{ github.repository }}/main/spec/loan-origination-api-openapi.yaml
-          working-directory: .postman-state/loan-origination
           artifact-dir: postman/loan-origination
           domain: lending
           environments-json: '["prod","staging","dev"]'
