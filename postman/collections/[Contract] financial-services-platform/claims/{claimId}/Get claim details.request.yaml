@@ -307,27 +307,27 @@ examples:
             "id": "string",
             "policyId": "string",
             "lineOfBusiness": "string",
-            "status": "settled",
-            "incidentDate": "2015-07-19",
+            "status": "closed",
+            "incidentDate": "1967-07-25",
             "description": "string",
-            "estimatedDamage": 1019.5762405527487,
-            "filedAt": "1998-06-29T00:52:50.420Z",
-            "updatedAt": "1977-02-09T23:55:59.455Z",
+            "estimatedDamage": 1651.4012373411135,
+            "filedAt": "1990-05-03T07:32:56.958Z",
+            "updatedAt": "1963-11-14T07:18:13.179Z",
             "assignedAdjuster": "string",
             "adjudication": {
               "claimId": "string",
               "decision": "string",
-              "approvedAmount": 8822.657652764228,
-              "adjudicatedAt": "2014-01-29T12:15:05.665Z",
+              "approvedAmount": 7297.681010355266,
+              "adjudicatedAt": "1963-10-10T18:48:26.490Z",
               "adjusterNotes": "string"
             },
             "settlement": {
               "claimId": "string",
-              "amount": 5445.524954507057,
+              "amount": 3536.182443905983,
               "paymentMethod": "string",
-              "status": "processing",
-              "initiatedAt": "1998-02-16T02:15:16.436Z",
-              "completedAt": "1971-07-04T19:18:41.478Z",
+              "status": "completed",
+              "initiatedAt": "1955-05-19T17:23:53.248Z",
+              "completedAt": "1993-05-26T18:59:59.677Z",
               "referenceNumber": "string"
             }
           }

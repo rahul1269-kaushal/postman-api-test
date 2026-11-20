@@ -14,41 +14,9 @@ body:
   type: json
   content: |-
     {
-      "decision": "approved",
-      "approvedAmount": 738.1423988351954,
+      "decision": "partial_approval",
+      "approvedAmount": 5151.838579663791,
       "adjusterNotes": "string",
       "denialReason": "string",
       "isAutomated": false
     }
-examples:
-  - response:
-      statusCode: 200
-      statusText: OK
-      body:
-        type: json
-        content: |-
-          {
-            "claimId": "string",
-            "decision": "string",
-            "approvedAmount": 8661.860356387964,
-            "adjudicatedAt": "2010-12-17T07:10:22.727Z",
-            "adjusterNotes": "string"
-          }
-      headers:
-        - key: Content-Type
-          value: application/json
-    name: Adjudication recorded
-  - response:
-      statusCode: 404
-      statusText: Not Found
-      body:
-        type: text
-        content: ''
-    name: Claim not found
-  - response:
-      statusCode: 409
-      statusText: Conflict
-      body:
-        type: text
-        content: ''
-    name: Claim already adjudicated

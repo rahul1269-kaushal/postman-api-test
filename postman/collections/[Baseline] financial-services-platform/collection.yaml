@@ -2,39 +2,46 @@ $schema: https://schema.postman.com/json/draft-2020-12/collection/v3.0.0/
 type: collection
 name: '[Baseline] financial-services-platform'
 description: |-
-  API for managing loan application origination, underwriting decisions, and
-  document collection in the Lending domain. This service handles the full
-  lifecycle from application submission through approval or denial.
+  API for managing insurance claims from initial filing through adjudication
+  and settlement. Handles property, auto, and liability claims across
+  multiple lines of business.
 
   **Authentication:**
-  - Service-to-service: mTLS (mutual TLS)
-  - Internal gateway: JWT token (Bearer token)
+  - External integrations: OAuth 2.0 (Bearer token)
+  - Internal services: API key (X-API-Key header)
 
   **Rate Limits:**
-  - Standard: 200 requests/minute
-  - Batch operations: 50 requests/minute
+  - Standard: 150 requests/minute
+  - File upload: 20 requests/minute
+
+  **Note:** This service runs on a mixed Lambda/ECS infrastructure and uses
+  GitLab CI for deployments. CI/CD integration patterns differ from the
+  Payments and Lending domains which use GitHub Actions.
 
 
   Contact Support:
-   Name: Lending Platform Team
-   Email: lending-platform@example.com
+   Name: Insurance Engineering Team
+   Email: insurance-engineering@example.com
 id: e9153885-bed8-4e2f-94e4-301b1a230af0
 auth:
-  type: bearer
+  type: apikey
   credentials:
-    - key: token
-      value: '{{bearerToken}}'
+    - key: key
+      value: X-API-Key
+      type: string
+    - key: value
+      value: '{{apiKey}}'
+      type: string
+    - key: in
+      value: header
       type: string
 variables:
   - key: baseUrl
-    value: https://lending-api.example.com/v1
-    type: any
+    value: https://claims-api.example.com/v3
   - key: baseUrl1
-    value: https://lending-api-staging.example.com/v1
-    type: any
+    value: https://claims-api-staging.example.com/v3
   - key: baseUrl2
-    value: https://lending-api-dev.example.com/v1
-    type: any
+    value: https://claims-api-dev.example.com/v3
 items:
-  - ref: ./applications/folder.yaml
+  - ref: ./claims/folder.yaml
   - ref: ./health/folder.yaml
