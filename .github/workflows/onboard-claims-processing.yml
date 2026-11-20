@@ -27,12 +27,14 @@ jobs:
           artifact-dir: postman/claims-processing
           domain: insurance
           environments-json: '["prod","staging","dev"]'
-          breaking-change-mode: pr-native
+          breaking-change-mode: off
           monitor-cron: '0 9 * * 1-5'
+          onboarding-scope: spec-only
           # Note: This service deploys via GitLab CI, not GitHub Actions.
-          # This workflow onboards the spec and generates Postman assets from GitHub.
-          # Integrating the generated collections into their GitLab pipelines is a
-          # separate platform-team coordination step covered in the adaptation analysis.
+          # breaking-change-mode is off because pr-native requires GitHub PR context.
+          # onboarding-scope is spec-only because the claims spec has schema quality
+          # issues (missing $ref, no 5xx responses) that block contract collection generation.
+          # Fixing the spec is a prerequisite before full collection generation can run.
           generate-ci-workflow: false
           postman-api-key: ${{ secrets.POSTMAN_API_KEY }}
           postman-access-token: ${{ secrets.POSTMAN_ACCESS_TOKEN }}
