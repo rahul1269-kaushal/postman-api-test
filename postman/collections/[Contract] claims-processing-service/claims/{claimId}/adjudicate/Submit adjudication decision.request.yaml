@@ -14,8 +14,8 @@ body:
   type: json
   content: |-
     {
-      "decision": "approved",
-      "approvedAmount": 5661.643541050523,
+      "decision": "denied",
+      "approvedAmount": 2146.618345430139,
       "adjusterNotes": "string",
       "denialReason": "string",
       "isAutomated": false

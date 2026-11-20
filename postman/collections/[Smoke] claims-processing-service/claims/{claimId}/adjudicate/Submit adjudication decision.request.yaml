@@ -15,7 +15,7 @@ body:
   content: |-
     {
       "decision": "approved",
-      "approvedAmount": 5381.664596504989,
+      "approvedAmount": 4348.639031530675,
       "adjusterNotes": "string",
       "denialReason": "string",
       "isAutomated": false
@@ -38,35 +38,3 @@ scripts:
       - '    }'
       - '});'
     language: text/javascript
-examples:
-  - response:
-      statusCode: 200
-      statusText: OK
-      body:
-        type: json
-        content: |-
-          {
-            "claimId": "string",
-            "decision": "string",
-            "approvedAmount": 9061.337570696429,
-            "adjudicatedAt": "1995-07-28T03:10:06.870Z",
-            "adjusterNotes": "string"
-          }
-      headers:
-        - key: Content-Type
-          value: application/json
-    name: Adjudication recorded
-  - response:
-      statusCode: 404
-      statusText: Not Found
-      body:
-        type: text
-        content: ''
-    name: Claim not found
-  - response:
-      statusCode: 409
-      statusText: Conflict
-      body:
-        type: text
-        content: ''
-    name: Claim already adjudicated

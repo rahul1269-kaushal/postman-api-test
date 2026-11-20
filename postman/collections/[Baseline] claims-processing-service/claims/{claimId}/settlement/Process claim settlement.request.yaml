@@ -14,8 +14,8 @@ body:
   type: json
   content: |-
     {
-      "paymentMethod": "wire",
-      "amount": 2006.8731812578467,
+      "paymentMethod": "ach",
+      "amount": 4662.25954204243,
       "payeeName": "string",
       "payeeAccountId": "string"
     }

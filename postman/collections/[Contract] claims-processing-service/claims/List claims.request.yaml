@@ -1,19 +1,19 @@
 type: http
 name: List claims
-url: '{{baseUrl}}/claims?status=filed&lineOfBusiness=workers_comp&filedAfter=2020-06-20&filedBefore=2020-06-20&limit=25&offset=0'
+url: '{{baseUrl}}/claims?status=settled&lineOfBusiness=workers_comp&filedAfter=1983-01-19&filedBefore=1983-01-19&limit=25&offset=0'
 method: GET
 headers:
   - key: Accept
     value: application/json
 queryParams:
   - key: status
-    value: filed
+    value: settled
   - key: lineOfBusiness
     value: workers_comp
   - key: filedAfter
-    value: '2020-06-20'
+    value: '1983-01-19'
   - key: filedBefore
-    value: '2020-06-20'
+    value: '1983-01-19'
   - key: limit
     value: '25'
   - key: offset
