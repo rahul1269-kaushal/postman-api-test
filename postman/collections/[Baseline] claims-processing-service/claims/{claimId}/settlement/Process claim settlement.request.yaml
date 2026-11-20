@@ -1,0 +1,55 @@
+type: http
+name: Process claim settlement
+url: '{{baseUrl}}/claims/:claimId/settlement'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+  - key: Accept
+    value: application/json
+pathVariables:
+  - key: claimId
+    value: string
+body:
+  type: json
+  content: |-
+    {
+      "paymentMethod": "wire",
+      "amount": 558.4920697905982,
+      "payeeName": "string",
+      "payeeAccountId": "string"
+    }
+examples:
+  - response:
+      statusCode: 201
+      statusText: Created
+      body:
+        type: json
+        content: |-
+          {
+            "claimId": "string",
+            "amount": 1499.1485694076289,
+            "paymentMethod": "string",
+            "status": "failed",
+            "initiatedAt": "1958-11-03T06:06:17.075Z",
+            "completedAt": "1977-03-11T05:32:52.655Z",
+            "referenceNumber": "string"
+          }
+      headers:
+        - key: Content-Type
+          value: application/json
+    name: Settlement initiated
+  - response:
+      statusCode: 400
+      statusText: Bad Request
+      body:
+        type: text
+        content: ''
+    name: Claim not eligible for settlement
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: Claim not found

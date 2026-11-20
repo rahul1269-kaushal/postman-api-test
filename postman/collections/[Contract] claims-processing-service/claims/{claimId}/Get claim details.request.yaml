@@ -1,0 +1,344 @@
+type: http
+name: Get claim details
+url: '{{baseUrl}}/claims/:claimId'
+method: GET
+headers:
+  - key: Accept
+    value: application/json
+pathVariables:
+  - key: claimId
+    value: string
+scripts:
+  - type: afterResponse
+    code:
+      - var contract = JSON.parse("{\"method\":\"GET\",\"path\":\"/claims/{claimId}\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\"},\"policyId\":{\"type\":\"string\"},\"lineOfBusiness\":{\"type\":\"string\"},\"status\":{\"type\":\"string\",\"enum\":[\"filed\",\"triaged\",\"under_investigation\",\"adjudicated\",\"settled\",\"denied\",\"closed\"]},\"incidentDate\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"estimatedDamage\":{\"type\":\"number\"},\"filedAt\":{\"type\":\"string\"},\"updatedAt\":{\"type\":\"string\"},\"assignedAdjuster\":{\"type\":\"string\"},\"adjudication\":{\"type\":\"object\",\"properties\":{\"claimId\":{\"type\":\"string\"},\"decision\":{\"type\":\"string\"},\"approvedAmount\":{\"type\":\"number\"},\"adjudicatedAt\":{\"type\":\"string\"},\"adjusterNotes\":{\"type\":\"string\"}}},\"settlement\":{\"type\":\"object\",\"properties\":{\"claimId\":{\"type\":\"string\"},\"amount\":{\"type\":\"number\"},\"paymentMethod\":{\"type\":\"string\"},\"status\":{\"type\":\"string\",\"enum\":[\"initiated\",\"processing\",\"completed\",\"failed\"]},\"initiatedAt\":{\"type\":\"string\"},\"completedAt\":{\"type\":\"string\"},\"referenceNumber\":{\"type\":\"string\"}}}},\"$schema\":\"http://json-schema.org/draft-07/schema#\"}}},\"hasBody\":true,\"headers\":[]},\"404\":{\"content\":{},\"hasBody\":false,\"headers\":[]}}}");
+      - var validators = {};
+      - validators["200"] = validators["200"] || {};
+      - |-
+        validators["200"]["application/json"] = (function() {
+        'use strict'
+        const hasOwn = Function.prototype.call.bind(Object.prototype.hasOwnProperty);
+        const ref0 = function validate(data) {
+          validate.errors = null
+          let errorCount = 0
+          if (!(typeof data === "object" && data && !Array.isArray(data))) {
+            if (validate.errors === null) validate.errors = []
+            validate.errors.push({ keywordLocation: "#/type", instanceLocation: "#" })
+            errorCount++
+          }
+          else {
+            if (data.id !== undefined && hasOwn(data, "id")) {
+              if (!(typeof data.id === "string")) {
+                if (validate.errors === null) validate.errors = []
+                validate.errors.push({ keywordLocation: "#/properties/id/type", instanceLocation: "#/id" })
+                errorCount++
+              }
+            }
+            if (data.policyId !== undefined && hasOwn(data, "policyId")) {
+              if (!(typeof data.policyId === "string")) {
+                if (validate.errors === null) validate.errors = []
+                validate.errors.push({ keywordLocation: "#/properties/policyId/type", instanceLocation: "#/policyId" })
+                errorCount++
+              }
+            }
+            if (data.lineOfBusiness !== undefined && hasOwn(data, "lineOfBusiness")) {
+              if (!(typeof data.lineOfBusiness === "string")) {
+                if (validate.errors === null) validate.errors = []
+                validate.errors.push({ keywordLocation: "#/properties/lineOfBusiness/type", instanceLocation: "#/lineOfBusiness" })
+                errorCount++
+              }
+            }
+            if (data.status !== undefined && hasOwn(data, "status")) {
+              if (!(typeof data.status === "string")) {
+                if (validate.errors === null) validate.errors = []
+                validate.errors.push({ keywordLocation: "#/properties/status/type", instanceLocation: "#/status" })
+                errorCount++
+              }
+              else {
+                if (!(data.status === "filed" || data.status === "triaged" || data.status === "under_investigation" || data.status === "adjudicated" || data.status === "settled" || data.status === "denied" || data.status === "closed")) {
+                  if (validate.errors === null) validate.errors = []
+                  validate.errors.push({ keywordLocation: "#/properties/status/enum", instanceLocation: "#/status" })
+                  errorCount++
+                }
+              }
+            }
+            if (data.incidentDate !== undefined && hasOwn(data, "incidentDate")) {
+              if (!(typeof data.incidentDate === "string")) {
+                if (validate.errors === null) validate.errors = []
+                validate.errors.push({ keywordLocation: "#/properties/incidentDate/type", instanceLocation: "#/incidentDate" })
+                errorCount++
+              }
+            }
+            if (data.description !== undefined && hasOwn(data, "description")) {
+              if (!(typeof data.description === "string")) {
+                if (validate.errors === null) validate.errors = []
+                validate.errors.push({ keywordLocation: "#/properties/description/type", instanceLocation: "#/description" })
+                errorCount++
+              }
+            }
+            if (data.estimatedDamage !== undefined && hasOwn(data, "estimatedDamage")) {
+              if (!(typeof data.estimatedDamage === "number")) {
+                if (validate.errors === null) validate.errors = []
+                validate.errors.push({ keywordLocation: "#/properties/estimatedDamage/type", instanceLocation: "#/estimatedDamage" })
+                errorCount++
+              }
+            }
+            if (data.filedAt !== undefined && hasOwn(data, "filedAt")) {
+              if (!(typeof data.filedAt === "string")) {
+                if (validate.errors === null) validate.errors = []
+                validate.errors.push({ keywordLocation: "#/properties/filedAt/type", instanceLocation: "#/filedAt" })
+                errorCount++
+              }
+            }
+            if (data.updatedAt !== undefined && hasOwn(data, "updatedAt")) {
+              if (!(typeof data.updatedAt === "string")) {
+                if (validate.errors === null) validate.errors = []
+                validate.errors.push({ keywordLocation: "#/properties/updatedAt/type", instanceLocation: "#/updatedAt" })
+                errorCount++
+              }
+            }
+            if (data.assignedAdjuster !== undefined && hasOwn(data, "assignedAdjuster")) {
+              if (!(typeof data.assignedAdjuster === "string")) {
+                if (validate.errors === null) validate.errors = []
+                validate.errors.push({ keywordLocation: "#/properties/assignedAdjuster/type", instanceLocation: "#/assignedAdjuster" })
+                errorCount++
+              }
+            }
+            if (data.adjudication !== undefined && hasOwn(data, "adjudication")) {
+              if (!(typeof data.adjudication === "object" && data.adjudication && !Array.isArray(data.adjudication))) {
+                if (validate.errors === null) validate.errors = []
+                validate.errors.push({ keywordLocation: "#/properties/adjudication/type", instanceLocation: "#/adjudication" })
+                errorCount++
+              }
+              else {
+                if (data.adjudication.claimId !== undefined && hasOwn(data.adjudication, "claimId")) {
+                  if (!(typeof data.adjudication.claimId === "string")) {
+                    if (validate.errors === null) validate.errors = []
+                    validate.errors.push({ keywordLocation: "#/properties/adjudication/properties/claimId/type", instanceLocation: "#/adjudication/claimId" })
+                    errorCount++
+                  }
+                }
+                if (data.adjudication.decision !== undefined && hasOwn(data.adjudication, "decision")) {
+                  if (!(typeof data.adjudication.decision === "string")) {
+                    if (validate.errors === null) validate.errors = []
+                    validate.errors.push({ keywordLocation: "#/properties/adjudication/properties/decision/type", instanceLocation: "#/adjudication/decision" })
+                    errorCount++
+                  }
+                }
+                if (data.adjudication.approvedAmount !== undefined && hasOwn(data.adjudication, "approvedAmount")) {
+                  if (!(typeof data.adjudication.approvedAmount === "number")) {
+                    if (validate.errors === null) validate.errors = []
+                    validate.errors.push({ keywordLocation: "#/properties/adjudication/properties/approvedAmount/type", instanceLocation: "#/adjudication/approvedAmount" })
+                    errorCount++
+                  }
+                }
+                if (data.adjudication.adjudicatedAt !== undefined && hasOwn(data.adjudication, "adjudicatedAt")) {
+                  if (!(typeof data.adjudication.adjudicatedAt === "string")) {
+                    if (validate.errors === null) validate.errors = []
+                    validate.errors.push({ keywordLocation: "#/properties/adjudication/properties/adjudicatedAt/type", instanceLocation: "#/adjudication/adjudicatedAt" })
+                    errorCount++
+                  }
+                }
+                if (data.adjudication.adjusterNotes !== undefined && hasOwn(data.adjudication, "adjusterNotes")) {
+                  if (!(typeof data.adjudication.adjusterNotes === "string")) {
+                    if (validate.errors === null) validate.errors = []
+                    validate.errors.push({ keywordLocation: "#/properties/adjudication/properties/adjusterNotes/type", instanceLocation: "#/adjudication/adjusterNotes" })
+                    errorCount++
+                  }
+                }
+              }
+            }
+            if (data.settlement !== undefined && hasOwn(data, "settlement")) {
+              if (!(typeof data.settlement === "object" && data.settlement && !Array.isArray(data.settlement))) {
+                if (validate.errors === null) validate.errors = []
+                validate.errors.push({ keywordLocation: "#/properties/settlement/type", instanceLocation: "#/settlement" })
+                errorCount++
+              }
+              else {
+                if (data.settlement.claimId !== undefined && hasOwn(data.settlement, "claimId")) {
+                  if (!(typeof data.settlement.claimId === "string")) {
+                    if (validate.errors === null) validate.errors = []
+                    validate.errors.push({ keywordLocation: "#/properties/settlement/properties/claimId/type", instanceLocation: "#/settlement/claimId" })
+                    errorCount++
+                  }
+                }
+                if (data.settlement.amount !== undefined && hasOwn(data.settlement, "amount")) {
+                  if (!(typeof data.settlement.amount === "number")) {
+                    if (validate.errors === null) validate.errors = []
+                    validate.errors.push({ keywordLocation: "#/properties/settlement/properties/amount/type", instanceLocation: "#/settlement/amount" })
+                    errorCount++
+                  }
+                }
+                if (data.settlement.paymentMethod !== undefined && hasOwn(data.settlement, "paymentMethod")) {
+                  if (!(typeof data.settlement.paymentMethod === "string")) {
+                    if (validate.errors === null) validate.errors = []
+                    validate.errors.push({ keywordLocation: "#/properties/settlement/properties/paymentMethod/type", instanceLocation: "#/settlement/paymentMethod" })
+                    errorCount++
+                  }
+                }
+                if (data.settlement.status !== undefined && hasOwn(data.settlement, "status")) {
+                  if (!(typeof data.settlement.status === "string")) {
+                    if (validate.errors === null) validate.errors = []
+                    validate.errors.push({ keywordLocation: "#/properties/settlement/properties/status/type", instanceLocation: "#/settlement/status" })
+                    errorCount++
+                  }
+                  else {
+                    if (!(data.settlement.status === "initiated" || data.settlement.status === "processing" || data.settlement.status === "completed" || data.settlement.status === "failed")) {
+                      if (validate.errors === null) validate.errors = []
+                      validate.errors.push({ keywordLocation: "#/properties/settlement/properties/status/enum", instanceLocation: "#/settlement/status" })
+                      errorCount++
+                    }
+                  }
+                }
+                if (data.settlement.initiatedAt !== undefined && hasOwn(data.settlement, "initiatedAt")) {
+                  if (!(typeof data.settlement.initiatedAt === "string")) {
+                    if (validate.errors === null) validate.errors = []
+                    validate.errors.push({ keywordLocation: "#/properties/settlement/properties/initiatedAt/type", instanceLocation: "#/settlement/initiatedAt" })
+                    errorCount++
+                  }
+                }
+                if (data.settlement.completedAt !== undefined && hasOwn(data.settlement, "completedAt")) {
+                  if (!(typeof data.settlement.completedAt === "string")) {
+                    if (validate.errors === null) validate.errors = []
+                    validate.errors.push({ keywordLocation: "#/properties/settlement/properties/completedAt/type", instanceLocation: "#/settlement/completedAt" })
+                    errorCount++
+                  }
+                }
+                if (data.settlement.referenceNumber !== undefined && hasOwn(data.settlement, "referenceNumber")) {
+                  if (!(typeof data.settlement.referenceNumber === "string")) {
+                    if (validate.errors === null) validate.errors = []
+                    validate.errors.push({ keywordLocation: "#/properties/settlement/properties/referenceNumber/type", instanceLocation: "#/settlement/referenceNumber" })
+                    errorCount++
+                  }
+                }
+              }
+            }
+          }
+          return errorCount === 0
+        };
+        return ref0})();;
+      - validators["404"] = validators["404"] || {};
+      - function selectedResponseContract() {
+      - '  var status = String(pm.response.code);'
+      - '  if (contract.responses[status]) return { key: status, value: contract.responses[status] };'
+      - '  var range = String(Math.floor(pm.response.code / 100)) + ''XX'';'
+      - '  if (contract.responses[range]) return { key: range, value: contract.responses[range] };'
+      - '  if (contract.responses.default) return { key: ''default'', value: contract.responses.default };'
+      - '  return null;'
+      - '}'
+      - function responseText() { return pm.response.text() || ""; }
+      - function isBodyless() { return pm.response.code === 204 || pm.response.code === 205 || pm.response.code === 304 || contract.method === "HEAD"; }
+      - function mediaBase(value) { return String(value || "").toLowerCase().split(";")[0].trim(); }
+      - 'function mediaParts(value) { var base = mediaBase(value); var parts = base.split("/"); return { raw: base, type: parts[0] || "", subtype: parts[1] || "" }; }'
+      - function isJsonSubtype(subtype) { return subtype === "json" || /\+json$/.test(subtype); }
+      - function mediaScore(expected, actual) {
+      - '  var e = mediaParts(expected); var a = mediaParts(actual);'
+      - '  if (!e.raw || !a.raw) return 0;'
+      - '  if (e.raw === a.raw) return 4;'
+      - '  if (e.type === a.type && e.subtype === "json" && isJsonSubtype(a.subtype)) return 3;'
+      - '  if (e.type === a.type && e.subtype === "*+json" && /\+json$/.test(a.subtype)) return 3;'
+      - '  if (e.type === a.type && e.subtype === "*") return 2;'
+      - '  if (e.type === "*" && e.subtype === "*") return 1;'
+      - '  return 0;'
+      - '}'
+      - function selectMedia(responseContract) {
+      - '  var actual = pm.response.headers.get("Content-Type") || "";'
+      - '  var content = responseContract.content || {};'
+      - '  var matches = Object.keys(content).map(function (expected) { return { expected: expected, score: mediaScore(expected, actual), media: content[expected] }; }).filter(function (entry) { return entry.score > 0; }).sort(function (a, b) { return b.score - a.score; });'
+      - '  if (matches.length === 0) return { error: "Content-Type " + actual + " does not match OpenAPI content for " + contract.method + " " + contract.path + " status " + pm.response.code + "; expected " + Object.keys(content).join(", ") };'
+      - '  if (matches.length > 1 && matches[0].score === matches[1].score) return { error: "Content-Type " + actual + " ambiguously matches OpenAPI content for " + contract.method + " " + contract.path + " status " + pm.response.code + "; expected " + Object.keys(content).join(", ") };'
+      - '  return matches[0];'
+      - '}'
+      - var selected = selectedResponseContract();
+      - pm.test('OpenAPI operation mapping exists', function () { pm.expect(contract.path).to.be.a('string').and.not.empty; });
+      - pm.test('Status code is defined by OpenAPI', function () { pm.expect(selected, 'No OpenAPI response defined for ' + contract.method + ' ' + contract.path + ' status ' + pm.response.code).to.exist; });
+      - pm.test('Response headers match OpenAPI', function () {
+      - '  if (!selected) return;'
+      - '  var headers = selected.value.headers || [];'
+      - '  headers.forEach(function (header) {'
+      - '    var actual = pm.response.headers.get(header.name);'
+      - '    if (!actual && header.required) pm.expect.fail("OpenAPI response header missing for " + contract.method + " " + contract.path + ": " + header.name);'
+      - '    if (!actual) return;'
+      - '    if (header.unsupported) pm.expect.fail("OpenAPI response header unsupported for " + contract.method + " " + contract.path + ": " + header.unsupported);'
+      - '    var headerValidator = validators[selected.key] && validators[selected.key].__headers && validators[selected.key].__headers[String(header.name).toLowerCase()];'
+      - '    if (headerValidator && !headerValidator(actual)) pm.expect.fail("OpenAPI response header validation failed for " + header.name + ": " + JSON.stringify(headerValidator.errors || []));'
+      - '  });'
+      - '});'
+      - pm.test('Response body matches OpenAPI body contract', function () {
+      - '  if (!selected) return;'
+      - '  if (isBodyless()) { pm.expect(responseText().trim().length).to.equal(0); return; }'
+      - '  var content = selected.value.content || {};'
+      - '  if (Object.keys(content).length === 0) { pm.expect(responseText().trim().length, "OpenAPI response defines no body but response body was not empty").to.equal(0); }'
+      - '  else { pm.expect(responseText().trim().length, "OpenAPI response defines a body but response body was empty").to.be.above(0); }'
+      - '});'
+      - pm.test('Content-Type matches OpenAPI response content', function () {
+      - '  if (!selected || isBodyless()) return;'
+      - '  var content = selected.value.content || {};'
+      - '  if (Object.keys(content).length === 0) return;'
+      - '  var actual = pm.response.headers.get("Content-Type");'
+      - '  if (!actual) pm.expect.fail("Content-Type <missing> does not match OpenAPI content for " + contract.method + " " + contract.path + " status " + pm.response.code + "; expected " + Object.keys(content).join(", "));'
+      - '  var media = selectMedia(selected.value);'
+      - '  if (media.error) pm.expect.fail(media.error);'
+      - '});'
+      - pm.test('Response body matches OpenAPI schema', function () {
+      - '  if (!selected || isBodyless()) return;'
+      - '  var content = selected.value.content || {};'
+      - '  if (Object.keys(content).length === 0) return;'
+      - '  var media = selectMedia(selected.value);'
+      - '  if (media.error) return;'
+      - '  if (media.media.unsupported) pm.expect.fail("OpenAPI schema unsupported for " + contract.method + " " + contract.path + " status " + pm.response.code + ": " + media.media.unsupported);'
+      - '  if (!media.media.schema) { return; }'
+      - '  var validate = validators[selected.key] && validators[selected.key][media.expected];'
+      - '  if (!validate) pm.expect.fail("OpenAPI schema validator was not generated for " + media.expected);'
+      - '  var actual = mediaParts(pm.response.headers.get("Content-Type") || "");'
+      - '  var value = isJsonSubtype(actual.subtype) ? pm.response.json() : responseText();'
+      - '  if (!isJsonSubtype(actual.subtype) && media.media.schema && media.media.schema.type !== "string") pm.expect.fail("Non-JSON response schema validation unsupported for " + contract.method + " " + contract.path);'
+      - '  if (!validate(value)) pm.expect.fail("OpenAPI schema validation failed for " + contract.method + " " + contract.path + " status " + pm.response.code + ": " + JSON.stringify(validate.errors || []));'
+      - '});'
+    language: text/javascript
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: json
+        content: |-
+          {
+            "id": "string",
+            "policyId": "string",
+            "lineOfBusiness": "string",
+            "status": "settled",
+            "incidentDate": "2022-04-18",
+            "description": "string",
+            "estimatedDamage": 8003.216293953606,
+            "filedAt": "1951-12-21T16:44:13.542Z",
+            "updatedAt": "1948-06-20T21:32:28.056Z",
+            "assignedAdjuster": "string",
+            "adjudication": {
+              "claimId": "string",
+              "decision": "string",
+              "approvedAmount": 1927.2504310680515,
+              "adjudicatedAt": "1965-02-06T12:56:33.153Z",
+              "adjusterNotes": "string"
+            },
+            "settlement": {
+              "claimId": "string",
+              "amount": 2313.4662964794984,
+              "paymentMethod": "string",
+              "status": "failed",
+              "initiatedAt": "1975-02-02T08:37:08.467Z",
+              "completedAt": "1980-01-19T03:02:28.163Z",
+              "referenceNumber": "string"
+            }
+          }
+      headers:
+        - key: Content-Type
+          value: application/json
+    name: Claim details
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: Claim not found

@@ -1,0 +1,56 @@
+type: http
+name: Get claim details
+url: '{{baseUrl}}/claims/:claimId'
+method: GET
+headers:
+  - key: Accept
+    value: application/json
+pathVariables:
+  - key: claimId
+    value: string
+examples:
+  - response:
+      statusCode: 200
+      statusText: OK
+      body:
+        type: json
+        content: |-
+          {
+            "id": "string",
+            "policyId": "string",
+            "lineOfBusiness": "string",
+            "status": "under_investigation",
+            "incidentDate": "2006-03-13",
+            "description": "string",
+            "estimatedDamage": 6731.7761126886935,
+            "filedAt": "1979-03-08T01:04:22.019Z",
+            "updatedAt": "1971-03-18T21:57:09.263Z",
+            "assignedAdjuster": "string",
+            "adjudication": {
+              "claimId": "string",
+              "decision": "string",
+              "approvedAmount": 5302.1835138844,
+              "adjudicatedAt": "1979-11-18T11:11:26.264Z",
+              "adjusterNotes": "string"
+            },
+            "settlement": {
+              "claimId": "string",
+              "amount": 923.5685598217214,
+              "paymentMethod": "string",
+              "status": "initiated",
+              "initiatedAt": "2016-11-14T15:38:29.033Z",
+              "completedAt": "2019-05-02T03:20:17.786Z",
+              "referenceNumber": "string"
+            }
+          }
+      headers:
+        - key: Content-Type
+          value: application/json
+    name: Claim details
+  - response:
+      statusCode: 404
+      statusText: Not Found
+      body:
+        type: text
+        content: ''
+    name: Claim not found
