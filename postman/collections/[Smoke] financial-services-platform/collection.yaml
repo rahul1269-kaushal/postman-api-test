@@ -2,50 +2,52 @@ $schema: https://schema.postman.com/json/draft-2020-12/collection/v3.0.0/
 type: collection
 name: '[Smoke] financial-services-platform'
 description: |-
-  API for managing insurance claims from initial filing through adjudication
-  and settlement. Handles property, auto, and liability claims across
-  multiple lines of business.
+  Comprehensive API for managing payment refunds in a financial services platform.
+  This API handles refund creation, status tracking, cancellation, and reporting for
+  payment transactions processed through the authorization and capture workflow.
 
   **Authentication:**
-  - External integrations: OAuth 2.0 (Bearer token)
-  - Internal services: API key (X-API-Key header)
+  - External partners: OAuth 2.0 (Bearer token)
+  - Internal services: JWT token (Bearer token)
 
   **Rate Limits:**
-  - Standard: 150 requests/minute
-  - File upload: 20 requests/minute
-
-  **Note:** This service runs on a mixed Lambda/ECS infrastructure and uses
-  GitLab CI for deployments. CI/CD integration patterns differ from the
-  Payments and Lending domains which use GitHub Actions.
+  - Standard tier: 100 requests/minute
+  - Enterprise tier: 1000 requests/minute
 
 
   Contact Support:
-   Name: Insurance Engineering Team
-   Email: insurance-engineering@example.com
+   Name: Payment Platform Team
+   Email: payment-platform@example.com
 id: 41c3f914-617f-4487-9386-89e181a996ab
 auth:
-  type: apikey
+  type: oauth2
   credentials:
-    - key: key
-      value: X-API-Key
+    - key: scope
+      value: refunds:read refunds:write refunds:admin
       type: string
-    - key: value
-      value: '{{apiKey}}'
+    - key: accessTokenUrl
+      value: https://auth.example.com/oauth2/token
       type: string
-    - key: in
-      value: header
+    - key: authUrl
+      value: https://auth.example.com/oauth2/authorize
+      type: string
+    - key: grant_type
+      value: authorization_code
       type: string
 variables:
   - key: baseUrl
-    value: https://claims-api.example.com/v3
+    value: https://api.payments.example.com/v2
     type: any
   - key: baseUrl1
-    value: https://claims-api-staging.example.com/v3
+    value: https://api-uat.payments.example.com/v2
     type: any
   - key: baseUrl2
-    value: https://claims-api-dev.example.com/v3
+    value: https://api-qa.payments.example.com/v2
+    type: any
+  - key: baseUrl3
+    value: https://api-dev.payments.example.com/v2
     type: any
 items:
-  - ref: ./claims/folder.yaml
+  - ref: ./refunds/folder.yaml
   - ref: ./health/folder.yaml
   - ref: ./00 - Resolve Secrets.request.yaml
